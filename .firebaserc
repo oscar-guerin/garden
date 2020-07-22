@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "garden-f5683": {
+      "hosting": {
+        "garden-front": [
+          "garden-f5683"
+        ]
+      }
+    }
+  }
+}
