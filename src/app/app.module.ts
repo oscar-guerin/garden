@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
 import { NgxRepositoryModule } from '@witty-services/ngx-repository';
 import { CoreModule } from './@core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './@material/material.module';
 
 @NgModule({
 	declarations: [
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 			firebase.initializeApp(environment.firebase).firestore()
 		),
 		CoreModule,
+		MaterialModule,
 		BrowserAnimationsModule
 	],
 	providers: [],
