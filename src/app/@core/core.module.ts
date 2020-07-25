@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CropService } from './services/crop.service';
+import { MaterialModule } from '../@material/material.module';
 
 const SERVICES: any = [
 	CropService
 ];
 
 @NgModule({
-	imports: [],
-	exports: [],
+	imports: [
+		MaterialModule,
+	],
+	exports: [
+		MaterialModule,
+	],
 	declarations: [],
 	providers: [
 		...SERVICES
