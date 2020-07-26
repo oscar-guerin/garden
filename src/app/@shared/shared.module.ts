@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 import { CoreModule } from '../@core/core.module';
+import { RouterModule } from '@angular/router';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent
@@ -8,7 +9,8 @@ const EXPORTABLE_COMPONENTS: any = [
 
 @NgModule({
 	imports: [
-		CoreModule
+		CoreModule,
+		RouterModule
 	],
 	exports: [
 		...EXPORTABLE_COMPONENTS
