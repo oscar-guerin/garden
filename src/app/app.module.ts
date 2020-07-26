@@ -9,6 +9,13 @@ import { CoreModule } from './@core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './@shared/shared.module';
 import * as firebase from 'firebase/app';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+	return new TranslateHttpLoader(http);
+}
 
 const firebaseApp: () => firebase.firestore.Firestore = () =>
 	!firebase.apps.length ? firebase.initializeApp(environment.firebase).firestore() : null
@@ -26,7 +33,16 @@ const firebaseApp: () => firebase.firestore.Firestore = () =>
 		),
 		CoreModule,
 		SharedModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		HttpClientModule,
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: httpLoaderFactory,
+				deps: [HttpClient]
+			},
+			defaultLanguage: 'en'
+		})
 	],
 	providers: [],
 	bootstrap: [AppComponent]
