@@ -2,7 +2,8 @@ import { FirebaseResource } from '@witty-services/ngx-firebase-repository';
 import { Column, Id } from '@witty-services/ngx-repository';
 
 @FirebaseResource({
-	firebaseConfiguration: '/crops'
+	firebaseConfiguration: '/crops',
+	path: '/crops'
 })
 export class Crop {
 

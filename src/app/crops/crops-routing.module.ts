@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CropsComponent } from './crops.component';
 import { EditCropComponent } from './edit-crop/edit-crop.component';
 import { ListCropComponent } from './list-crop/list-crop.component';
+import { CoreModule } from '../@core/core.module';
 
 const COMPONENTS: any = [
 	CropsComponent,
@@ -35,7 +36,7 @@ const routes: Routes = [
 	declarations: [
 		...COMPONENTS
 	],
-	imports: [RouterModule.forChild(routes)],
+	imports: [RouterModule.forChild(routes), CoreModule],
 	exports: [
 		RouterModule,
 		...COMPONENTS

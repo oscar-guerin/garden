@@ -1,5 +1,8 @@
 {
 	"SHARED": {
 		"crop": "Crop"
+	},
+	"CROP": {
+		"name": "Name"
 	}
 }

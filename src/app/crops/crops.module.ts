@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CropsRoutingModule } from './crops-routing.module';
+import { CoreModule } from '../@core/core.module';
 
 @NgModule({
 	imports: [
-		CropsRoutingModule
+		CropsRoutingModule,
+		CoreModule
 	],
 	exports: [],
 	declarations: [],

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 const MATERIAL_MODULES: any = [
 	MatToolbarModule,
-	MatButtonModule
+	MatButtonModule,
+	MatTableModule
 ]
 
 @NgModule({
