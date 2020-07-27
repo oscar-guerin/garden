@@ -1,6 +1,7 @@
 {
 	"SHARED": {
-		"backToList": "Back to list"
+		"backToList": "Back to list",
+		"edit": "Edit"
 	},
 	"CROP": {
 		"crop": "Crop",

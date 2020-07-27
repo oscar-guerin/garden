@@ -1,0 +1,14 @@
+<ng-container *ngIf="crop$ | async as crop">
+	<button color="primary"
+			mat-flat-button
+			routerLink="/crops/list">
+		{{ 'SHARED.backToList' | translate }}
+	</button>
+	<button color="primary"
+			mat-flat-button
+			routerLink="/crops/edit/{{crop.id}}">
+		{{ 'SHARED.edit' | translate }}
+	</button>
+	{{ crop.name }}
+</ng-container>
+

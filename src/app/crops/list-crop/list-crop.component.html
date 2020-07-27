@@ -10,6 +10,6 @@
 
 	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
 	<mat-row *matRowDef="let crop; columns: displayedColumns;"
-			 routerLink="/crops/edit/{{crop.id}}">
+			 routerLink="/crops/detail/{{crop.id}}">
 	</mat-row>
 </mat-table>

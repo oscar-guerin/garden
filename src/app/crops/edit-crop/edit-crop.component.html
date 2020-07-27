@@ -1,7 +1,4 @@
-<button color="primary"
-		mat-flat-button
-		routerLink="/crops/list">
-	{{ 'SHARED.backToList' | translate }}
-</button>
+<ng-container *ngIf="crop$ | async as crop">
+	{{ crop.name }}
+</ng-container>
 
-{{ (crop$|async)?.name }}
