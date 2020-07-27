@@ -21,7 +21,7 @@ const routes: Routes = [
 				redirectTo: 'list'
 			},
 			{
-				path: 'edit',
+				path: 'edit/:id',
 				component: EditCropComponent
 			},
 			{

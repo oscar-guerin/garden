@@ -17,4 +17,8 @@ export class CropService {
 	public findAll(): Observable<Page<Crop>> {
 		return this.cropRepository.findAll();
 	}
+
+	public findById(id: string): Observable<Crop> {
+		return this.cropRepository.findById(id);
+	}
 }
