@@ -4,13 +4,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 const MATERIAL_MODULES: any = [
 	MatToolbarModule,
 	MatButtonModule,
 	MatTableModule,
 	MatInputModule,
-	MatFormFieldModule
+	MatFormFieldModule,
+	MatIconModule
 ]
 
 @NgModule({

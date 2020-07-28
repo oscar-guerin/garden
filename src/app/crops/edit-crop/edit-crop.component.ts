@@ -5,6 +5,7 @@ import { Crop } from '../../@core/models/crop';
 import { map, switchMap } from 'rxjs/operators';
 import { CropService } from '../../@core/services/crop.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ifNotNull } from '@witty-services/rxjs-common';
 
 @Component({
 	selector: 'app-edit-crop',
@@ -16,10 +17,11 @@ export class EditCropComponent {
 	public form: FormGroup;
 
 	public constructor(private readonly route: ActivatedRoute,
-	                   private readonly cropService: CropService,
-	                   private readonly fb: FormBuilder) {
+					   private readonly cropService: CropService,
+					   private readonly fb: FormBuilder) {
 		this.crop$ = route.paramMap.pipe(
 			map((paramMap: ParamMap) => paramMap.get('id')),
+			ifNotNull(),
 			switchMap((id: string) => cropService.findById(id))
 		);
 

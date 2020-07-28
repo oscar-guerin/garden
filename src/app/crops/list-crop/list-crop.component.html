@@ -3,13 +3,18 @@
 		<mat-header-cell *matHeaderCellDef>
 			{{ 'CROP.name' | translate }}
 		</mat-header-cell>
-		<mat-cell *matCellDef="let crop">
-			{{crop.name}}
-		</mat-cell>
-	</ng-container>
+        <mat-cell *matCellDef="let crop">
+            {{crop.name}}
+        </mat-cell>
+    </ng-container>
 
-	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-	<mat-row *matRowDef="let crop; columns: displayedColumns;"
-			 routerLink="/crops/detail/{{crop.id}}">
-	</mat-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let crop; columns: displayedColumns;"
+             routerLink="/crops/detail/{{crop.id}}">
+    </mat-row>
 </mat-table>
+<button color="primary"
+        mat-fab
+        routerLink="/crops/create">
+    <mat-icon>add</mat-icon>
+</button>

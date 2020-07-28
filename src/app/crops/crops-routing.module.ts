@@ -31,6 +31,10 @@ const routes: Routes = [
 				component: EditCropComponent
 			},
 			{
+				path: 'create',
+				component: EditCropComponent
+			},
+			{
 				path: 'list',
 				component: ListCropComponent
 			}

@@ -1,13 +1,12 @@
 <ng-container *ngIf="crop$ | async as crop">
-	{{ crop.name }}
-	<form [formGroup]="form">
-		<mat-form-field>
-			<mat-label>{{ 'CROP.name' | translate }}</mat-label>
-			<input aria-label="{{ 'CROP.name' | translate }}"
-				   formControlName="name"
-				   id="name"
-				   matInput>
-		</mat-form-field>
-	</form>
+    {{ crop.name }}
 </ng-container>
-
+<form [formGroup]="form">
+    <mat-form-field>
+        <mat-label>{{ 'CROP.name' | translate }}</mat-label>
+        <input aria-label="{{ 'CROP.name' | translate }}"
+               formControlName="name"
+               id="name"
+               matInput>
+    </mat-form-field>
+</form>
