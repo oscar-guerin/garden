@@ -10,6 +10,7 @@ import { map, switchMap } from 'rxjs/operators';
 	templateUrl: './detail-crop.component.html'
 })
 export class DetailCropComponent {
+
 	public crop$: Observable<Crop>;
 
 	public constructor(private readonly route: ActivatedRoute,
