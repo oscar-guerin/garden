@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Crop } from '../../@core/models/crop';
-import { map, switchMap } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 import { CropService } from '../../@core/services/crop.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ifNotNull } from '@witty-services/rxjs-common';
@@ -17,6 +17,7 @@ export class EditCropComponent {
 	public form: FormGroup;
 
 	public constructor(private readonly route: ActivatedRoute,
+					   private readonly router: Router,
 					   private readonly cropService: CropService,
 					   private readonly fb: FormBuilder) {
 		this.crop$ = route.paramMap.pipe(
@@ -28,5 +29,11 @@ export class EditCropComponent {
 		this.form = this.fb.group({
 			name: ['']
 		});
+	}
+
+	public submit(): void {
+		this.cropService.create(new Crop(this.form.value))
+			.pipe(first())
+			.subscribe(() => this.router.navigateByUrl('/'))
 	}
 }

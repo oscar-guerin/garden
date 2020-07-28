@@ -14,9 +14,7 @@ export class Crop {
 	@Column({field: 'name', customConverter: () => LocalizedStringConverter})
 	public name: string;
 
-	@Column()
-	public sowingStartingWeek: number;
-
-	@Column()
-	public plantationStartingWeek: number;
+	public constructor(data: Partial<Crop> = {}) {
+		Object.assign(this, data);
+	}
 }
