@@ -1,6 +1,6 @@
 import { FirebaseResource } from '@witty-services/ngx-firebase-repository';
 import { Column, Id } from '@witty-services/ngx-repository';
-import { LocalizedStringConverter } from '../converters/localized-string.converter';
+import { LocalizedString } from './localized-string';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops',
@@ -11,8 +11,8 @@ export class Crop {
 	@Id()
 	public id: string;
 
-	@Column({field: 'name', customConverter: () => LocalizedStringConverter})
-	public name: string;
+	@Column()
+	public name: LocalizedString;
 
 	public constructor(data: Partial<Crop> = {}) {
 		Object.assign(this, data);
