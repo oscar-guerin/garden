@@ -4,7 +4,7 @@
 			{{ 'CROP.name' | translate }}
 		</mat-header-cell>
         <mat-cell *matCellDef="let crop">
-            {{crop.name}}
+            {{crop.name | lst}}
         </mat-cell>
     </ng-container>
 
