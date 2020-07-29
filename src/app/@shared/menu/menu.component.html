@@ -1,8 +1,11 @@
 <mat-toolbar>
-	<span class="font-weight-bold pr-3">Garden</span>
-	<button mat-flat-button
-			routerLink="/crops">
-		{{ 'CROP.crops' | translate }}
-	</button>
+	<span class="font-weight-bold pr-3"
+          routerLink="/">
+        Garden
+    </span>
+    <button mat-flat-button
+            routerLink="/crops">
+        {{ 'CROP.crops' | translate }}
+    </button>
     <app-language-switcher></app-language-switcher>
 </mat-toolbar>
