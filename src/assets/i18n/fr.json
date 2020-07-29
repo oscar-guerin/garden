@@ -1,0 +1,13 @@
+{
+  "SHARED": {
+    "backToList": "Retour à la liste",
+    "edit": "Modifier",
+    "save": "Enregistrer",
+    "language": "Langue"
+  },
+  "CROP": {
+    "crop": "Culture",
+    "crops": "Cultures",
+    "name": "Nom"
+  }
+}

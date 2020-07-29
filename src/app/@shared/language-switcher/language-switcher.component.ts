@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FormControl } from '@angular/forms';
+import { ObservableDestroy } from '@witty-services/ngx-common';
+import { takeUntil } from 'rxjs/operators';
 
 interface Language {
 	code: string;
@@ -11,7 +13,7 @@ interface Language {
 	selector: 'app-language-switcher',
 	templateUrl: './language-switcher.component.html'
 })
-export class LanguageSwitcherComponent {
+export class LanguageSwitcherComponent extends ObservableDestroy {
 
 	public readonly languages: Language[] = [
 		{ code: 'en', name: 'English' },
@@ -20,7 +22,11 @@ export class LanguageSwitcherComponent {
 
 	public languageControl: FormControl;
 
-	public constructor(private readonly translateService: TranslateService) {
-		this.languageControl = new FormControl(this.translateService.currentLang);
+	public constructor(translateService: TranslateService) {
+		super();
+		this.languageControl = new FormControl(translateService.currentLang);
+		this.languageControl.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(
+			(code: string) => translateService.use(code)
+		)
 	}
 }

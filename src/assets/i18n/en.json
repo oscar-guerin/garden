@@ -2,7 +2,8 @@
 	"SHARED": {
       "backToList": "Back to list",
       "edit": "Edit",
-      "save": "Save"
+      "save": "Save",
+      "language": "Language"
     },
 	"CROP": {
 		"crop": "Crop",
