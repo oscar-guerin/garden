@@ -11,7 +11,7 @@ export class Crop {
 	@Id()
 	public id: string;
 
-	@Column()
+	@Column(() => LocalizedString)
 	public name: LocalizedString;
 
 	public constructor(data: Partial<Crop> = {}) {
