@@ -22,7 +22,7 @@ export class Crop {
 
 	public static fromForm(value: CropFormValue, languageCode: LanguageCode): Crop {
 		return new Crop({
-			name: LocalizedString.build(value.name, languageCode) // TODO
+			name: LocalizedString.build(value.name, languageCode)
 		})
 	}
 }
