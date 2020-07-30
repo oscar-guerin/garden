@@ -2,6 +2,7 @@ import { FirebaseResource } from '@witty-services/ngx-firebase-repository';
 import { Column, Id } from '@witty-services/ngx-repository';
 import { LocalizedString } from './localized-string';
 import { CropFormValue } from '../interfaces/crop-form-value';
+import { LanguageCode } from '../types/language-code.type';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops',
@@ -19,9 +20,9 @@ export class Crop {
 		Object.assign(this, data);
 	}
 
-	public static fromForm(value: CropFormValue): Crop {
+	public static fromForm(value: CropFormValue, languageCode: LanguageCode): Crop {
 		return new Crop({
-			name: LocalizedString.build(null, null) // TODO
+			name: LocalizedString.build(value.name, languageCode) // TODO
 		})
 	}
 }

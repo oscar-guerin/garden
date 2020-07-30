@@ -1,4 +1,5 @@
 import { Column } from '@witty-services/ngx-repository';
+import { LanguageCode } from '../types/language-code.type';
 
 export class LocalizedString {
 
@@ -12,12 +13,12 @@ export class LocalizedString {
 		Object.assign(this, data);
 	}
 
-	public static build(languageCode: string, data: string): LocalizedString {
+	public static build(data: string, languageCode: LanguageCode): LocalizedString {
 		switch (languageCode) { // TODO can be optimized ?
 			case 'en':
-				return new LocalizedString({ en: data, fr: `[en] ${data}` });
+				return new LocalizedString({ en: data, fr: `(en) ${data}` });
 			case 'fr':
-				return new LocalizedString({ en: `[fr] ${data}`, fr: data });
+				return new LocalizedString({ en: `(fr) ${data}`, fr: data });
 		}
 	}
 }
