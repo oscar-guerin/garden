@@ -3,6 +3,7 @@ import { Column, Id } from '@witty-services/ngx-repository';
 import { LocalizedString } from './localized-string';
 import { CropFormValue } from '../interfaces/crop-form-value';
 import { LanguageCode } from '../types/language-code.type';
+import { merge } from 'lodash';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops',
@@ -27,6 +28,6 @@ export class Crop {
 	}
 
 	public merge(crop: Crop): Crop {
-		return Object.assign(this, crop);
+		return merge(this, crop);
 	}
 }

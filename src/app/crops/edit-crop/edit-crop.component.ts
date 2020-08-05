@@ -32,8 +32,9 @@ export class EditCropComponent {
 	}
 
 	public submit(): void {
-		this.cropService.buildAndCreate(this.form.value)
-			.pipe(first())
-			.subscribe(() => this.router.navigateByUrl('/'))
+		this.crop$.pipe(
+			switchMap((crop: Crop) => this.cropService.updateWithForm(crop, this.form.value)),
+			first()
+		).subscribe(() => this.router.navigateByUrl('/'))
 	}
 }

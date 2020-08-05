@@ -17,10 +17,10 @@ export class CropService {
 	public constructor(private readonly translateService: TranslateService) {
 	}
 
-	public buildAndCreate(formCrop: CropFormValue): Observable<string> {
+	public updateWithForm(crop: Crop, formCrop: CropFormValue): Observable<string> {
 		return of(formCrop).pipe(
-			map((form: CropFormValue) => Crop.fromForm(form, this.translateService.currentLang as LanguageCode)),
-			switchMap((crop: Crop) => this.create(crop))
+			map((form: CropFormValue) => crop.merge(Crop.fromForm(form, this.translateService.currentLang as LanguageCode))),
+			switchMap((mergedCrop: Crop) => this.create(mergedCrop))
 		);
 	}
 
