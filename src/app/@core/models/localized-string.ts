@@ -13,6 +13,15 @@ export class LocalizedString {
 		Object.assign(this, data);
 	}
 
+	public get(languageCode: LanguageCode): string {
+		switch (languageCode) {
+			case 'en':
+				return this.en;
+			case 'fr':
+				return this.fr;
+		}
+	}
+
 	public mergeWithData(data: string, languageCode: LanguageCode): LocalizedString {
 		if (!this) {
 			switch (languageCode) {

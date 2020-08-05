@@ -21,6 +21,12 @@ export class Crop {
 		Object.assign(this, data);
 	}
 
+	public toFormValue(languageCode: LanguageCode): CropFormValue {
+		return {
+			name: this.name.get(languageCode)
+		};
+	}
+
 	public mergeWithForm(value: CropFormValue, languageCode: LanguageCode): Crop {
 		return this.merge(new Crop({
 			name: this.name.mergeWithData(value.name, languageCode)
