@@ -13,12 +13,21 @@ export class LocalizedString {
 		Object.assign(this, data);
 	}
 
-	public static build(data: string, languageCode: LanguageCode): LocalizedString {
-		switch (languageCode) { // TODO can be optimized ?
-			case 'en':
-				return new LocalizedString({ en: data, fr: `(en) ${data}` });
-			case 'fr':
-				return new LocalizedString({ en: `(fr) ${data}`, fr: data });
+	public mergeWithData(data: string, languageCode: LanguageCode): LocalizedString {
+		if (!this) {
+			switch (languageCode) {
+				case 'en':
+					return new LocalizedString({ en: data, fr: `(en) ${data}` });
+				case 'fr':
+					return new LocalizedString({ en: `(fr) ${data}`, fr: data });
+			}
+		} else {
+			switch (languageCode) {
+				case 'en':
+					return this.merge({ en: data });
+				case 'fr':
+					return this.merge({ fr: data });
+			}
 		}
 	}
 

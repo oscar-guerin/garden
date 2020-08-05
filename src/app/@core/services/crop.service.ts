@@ -19,7 +19,7 @@ export class CropService {
 
 	public updateWithForm(crop: Crop, formCrop: CropFormValue): Observable<string> {
 		return of(formCrop).pipe(
-			map((form: CropFormValue) => crop.merge(Crop.fromForm(form, this.translateService.currentLang as LanguageCode))),
+			map((form: CropFormValue) => crop.mergeWithForm(form, this.translateService.currentLang as LanguageCode)),
 			switchMap((mergedCrop: Crop) => this.create(mergedCrop))
 		);
 	}
