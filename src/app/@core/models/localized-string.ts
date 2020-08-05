@@ -21,4 +21,8 @@ export class LocalizedString {
 				return new LocalizedString({ en: `(fr) ${data}`, fr: data });
 		}
 	}
+
+	public merge(data: Partial<LocalizedString> = {}): LocalizedString {
+		return Object.assign(this, data);
+	}
 }

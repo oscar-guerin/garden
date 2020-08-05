@@ -25,4 +25,8 @@ export class Crop {
 			name: LocalizedString.build(value.name, languageCode)
 		})
 	}
+
+	public merge(crop: Crop): Crop {
+		return Object.assign(this, crop);
+	}
 }
