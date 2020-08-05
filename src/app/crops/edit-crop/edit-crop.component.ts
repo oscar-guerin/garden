@@ -8,7 +8,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ifNotNull } from '@witty-services/rxjs-common';
 import { ObservableDestroy } from '@witty-services/ngx-common';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageCode } from '../../@core/types/language-code.type';
 
 @Component({
 	selector: 'app-edit-crop',
@@ -38,13 +37,13 @@ export class EditCropComponent extends ObservableDestroy {
 		this.crop$.pipe(
 			takeUntil(this.onDestroy$)
 		).subscribe(
-			(crop: Crop) => this.form.patchValue(crop.toFormValue(translateService.currentLang as LanguageCode))
+			(crop: Crop) => this.form.patchValue(crop)
 		);
 	}
 
 	public submit(): void {
 		this.crop$.pipe(
-			switchMap((crop: Crop) => this.cropService.updateWithForm(crop, this.form.value)),
+			switchMap((crop: Crop) => this.cropService.createOrUpdate(crop.merge(this.form.value))),
 			first()
 		).subscribe(() => this.router.navigateByUrl('/'))
 	}
