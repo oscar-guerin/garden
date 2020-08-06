@@ -7,7 +7,9 @@ import { CropService } from '../../@core/services/crop.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ifNotNull } from '@witty-services/rxjs-common';
 import { ObservableDestroy } from '@witty-services/ngx-common';
-import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditActionComponent } from '../../@shared/edit-action/edit-action.component';
+import { Action } from '../../@core/models/action';
 
 @Component({
 	selector: 'app-edit-crop',
@@ -20,8 +22,8 @@ export class EditCropComponent extends ObservableDestroy {
 
 	public constructor(private readonly route: ActivatedRoute,
 					   private readonly router: Router,
+					   private readonly dialog: MatDialog,
 					   private readonly cropService: CropService,
-					   private readonly translateService: TranslateService,
 					   private readonly fb: FormBuilder) {
 		super();
 		this.crop$ = route.paramMap.pipe(
@@ -39,6 +41,10 @@ export class EditCropComponent extends ObservableDestroy {
 		).subscribe(
 			(crop: Crop) => this.form.patchValue(crop)
 		);
+	}
+
+	public openActionDialog(action: Action = new Action()) {
+		this.dialog.open(EditActionComponent, action)
 	}
 
 	public submit(): void {

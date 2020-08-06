@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ObservableDestroy } from '@witty-services/ngx-common';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { first } from 'rxjs/operators';
 import { ActionService } from '../../@core/services/action.service';
 import { Action } from '../../@core/models/action';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
 	selector: 'app-edit-action',
@@ -13,12 +14,10 @@ import { Action } from '../../@core/models/action';
 })
 export class EditActionComponent extends ObservableDestroy {
 
-	@Input()
-	public action: Action;
-
 	public form: FormGroup;
 
-	public constructor(private readonly route: ActivatedRoute,
+	public constructor(@Inject(MAT_DIALOG_DATA) public action: Action,
+					   private readonly route: ActivatedRoute,
 					   private readonly router: Router,
 					   private readonly actionService: ActionService,
 					   private readonly translateService: TranslateService,

@@ -1,9 +1,12 @@
-<form [formGroup]="form">
+<h1 mat-dialog-title>{{ 'ACTION.action' | translate }}</h1>
+<form [formGroup]="form"
+      mat-dialog-content>
     <mat-form-field>
         <mat-label>{{ 'ACTION.name' | translate }}</mat-label>
-        <input formControlName="name"
-               id="name"
-               matInput>
+        <label>
+            <input formControlName="name"
+                   matInput>
+        </label>
     </mat-form-field>
     <div formArrayName="steps">
         <div *ngFor="let step of stepsArrayControl.controls; let i = index">
