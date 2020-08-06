@@ -5,6 +5,17 @@
                id="name"
                matInput>
     </mat-form-field>
+    <div formArrayName="steps">
+        <div *ngFor="let step of stepsArrayControl.controls; let i = index">
+            <mat-form-field>
+                <mat-label>{{ 'ACTION.stepName' | translate }}</mat-label>
+                <label>
+                    <input [formControlName]="i"
+                           matInput>
+                </label>
+            </mat-form-field>
+        </div>
+    </div>
     <button (click)="submit()"
             mat-flat-button>
         {{ 'SHARED.save' | translate }}

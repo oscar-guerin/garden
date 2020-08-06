@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ObservableDestroy } from '@witty-services/ngx-common';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { first } from 'rxjs/operators';
@@ -26,13 +26,22 @@ export class EditActionComponent extends ObservableDestroy {
 		super();
 
 		this.form = this.fb.group({
-			name: [this.action.name]
+			name: [this.action.name],
+			steps: this.fb.array([])
 		});
+	}
+
+	public get stepsArrayControl(): FormArray {
+		return this.form.get('steps') as FormArray;
 	}
 
 	public submit(): void {
 		this.actionService.createOrUpdate(this.action.merge(this.form.value)).pipe(
 			first()
 		).subscribe(() => this.router.navigateByUrl('/'));
+	}
+
+	private addStep(stepValue?: string): void {
+		this.stepsArrayControl.push(new FormControl(stepValue));
 	}
 }
