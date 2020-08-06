@@ -1,14 +1,22 @@
 <ng-container *ngIf="crop$ | async as crop">
 	<button color="primary"
-			mat-flat-button
-			routerLink="/crops/list">
-		{{ 'SHARED.backToList' | translate }}
-	</button>
-	<button color="primary"
-			mat-flat-button
-			routerLink="/crops/edit/{{crop.id}}">
-		{{ 'SHARED.edit' | translate }}
-	</button>
-	{{ crop.name }}
+            mat-flat-button
+            routerLink="/crops/list">
+        {{ 'SHARED.backToList' | translate }}
+    </button>
+    <button color="primary"
+            mat-flat-button
+            routerLink="/crops/edit/{{crop.id}}">
+        {{ 'SHARED.edit' | translate }}
+    </button>
+    {{ crop.name }}
+    <div *ngIf="crop.actions$ | async as actions">
+        <div *ngFor="let action of actions">
+            {{ action.name }}
+            <div *ngFor="let step of action.steps">
+                {{ step }}
+            </div>
+        </div>
+    </div>
 </ng-container>
 
