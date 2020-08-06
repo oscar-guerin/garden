@@ -18,6 +18,12 @@
                            matInput>
                 </label>
             </mat-form-field>
+            <button (click)="removeStep(i)"
+                    aria-label="{{ 'ACTION.removeStep' | translate }}"
+                    color="warn"
+                    mat-mini-fab>
+                <mat-icon>delete</mat-icon>
+            </button>
         </div>
         <button (click)="addStep()"
                 mat-flat-button>

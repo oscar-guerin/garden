@@ -14,7 +14,7 @@ export class DetailCropComponent {
 	public crop$: Observable<Crop>;
 
 	public constructor(private readonly route: ActivatedRoute,
-	                   private readonly cropService: CropService) {
+					   private readonly cropService: CropService) {
 		this.crop$ = route.paramMap.pipe(
 			map((paramMap: ParamMap) => paramMap.get('id')),
 			switchMap((id: string) => cropService.findById(id))

@@ -49,4 +49,8 @@ export class EditActionComponent extends ObservableDestroy {
 	public addStep(stepValue?: string): void {
 		this.stepsArrayControl.push(new FormControl(stepValue));
 	}
+
+	public removeStep(index: number): void {
+		this.stepsArrayControl.removeAt(index);
+	}
 }

@@ -44,7 +44,11 @@ export class EditCropComponent extends ObservableDestroy {
 	}
 
 	public openActionDialog(action: Action = new Action()): void {
-		this.dialog.open(EditActionComponent, { data: action })
+		this.crop$.pipe(
+			first()
+		).subscribe((crop: Crop) => this.dialog.open(EditActionComponent, { data: { action, crop } })
+		)
+
 	}
 
 	public submit(): void {
