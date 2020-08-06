@@ -43,8 +43,8 @@ export class EditCropComponent extends ObservableDestroy {
 		);
 	}
 
-	public openActionDialog(action: Action = new Action()) {
-		this.dialog.open(EditActionComponent, action)
+	public openActionDialog(action: Action = new Action()): void {
+		this.dialog.open(EditActionComponent, { data: action })
 	}
 
 	public submit(): void {
