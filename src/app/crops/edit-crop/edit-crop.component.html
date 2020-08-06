@@ -9,10 +9,12 @@
                    matInput>
         </label>
     </mat-form-field>
-    <button (click)="openActionDialog()"
-            mat-flat-button>
-        {{ 'CROP.addAction' | translate }}
-    </button>
+    <ng-container *ngIf="crop$ | async">
+        <button (click)="openActionDialog()"
+                mat-flat-button>
+            {{ 'CROP.addAction' | translate }}
+        </button>
+    </ng-container>
     <button (click)="submit()"
             mat-flat-button>
         {{ 'SHARED.save' | translate }}

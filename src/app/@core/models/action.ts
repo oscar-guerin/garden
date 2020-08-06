@@ -1,15 +1,18 @@
 import { FirebaseResource } from '@witty-services/ngx-firebase-repository';
-import { Column, Id } from '@witty-services/ngx-repository';
+import { Column, Id, PathColumn } from '@witty-services/ngx-repository';
 import { merge } from 'lodash';
 
 @FirebaseResource({
-	firebaseConfiguration: '/crops/:id/actions',
-	path: '/crops/:id/actions'
+	firebaseConfiguration: '/crops/:cropId/actions',
+	path: '/crops/:cropId/actions'
 })
 export class Action {
 
 	@Id()
 	public id: string;
+
+	@PathColumn()
+	public cropId: string;
 
 	@Column()
 	public name: string;
@@ -21,7 +24,7 @@ export class Action {
 		Object.assign(this, data);
 	}
 
-	public merge(crop: Partial<Action>): Action {
-		return merge(this, crop);
+	public merge(...actions: Partial<Action>[]): Action {
+		return merge(this, ...actions);
 	}
 }
