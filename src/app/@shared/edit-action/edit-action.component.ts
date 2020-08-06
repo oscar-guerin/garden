@@ -40,7 +40,7 @@ export class EditActionComponent extends ObservableDestroy {
 		).subscribe(() => this.router.navigateByUrl('/'));
 	}
 
-	private addStep(stepValue?: string): void {
+	public addStep(stepValue?: string): void {
 		this.stepsArrayControl.push(new FormControl(stepValue));
 	}
 }

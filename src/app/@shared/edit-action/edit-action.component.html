@@ -10,14 +10,19 @@
     </mat-form-field>
     <div formArrayName="steps">
         <div *ngFor="let step of stepsArrayControl.controls; let i = index">
+            {{ i + 1 }}
             <mat-form-field>
-                <mat-label>{{ 'ACTION.stepName' | translate }}</mat-label>
+                <mat-label>{{ 'ACTION.stepValue' | translate }}</mat-label>
                 <label>
                     <input [formControlName]="i"
                            matInput>
                 </label>
             </mat-form-field>
         </div>
+        <button (click)="addStep()"
+                mat-flat-button>
+            {{ 'ACTION.addStep' | translate }}
+        </button>
     </div>
     <button (click)="submit()"
             mat-flat-button>
