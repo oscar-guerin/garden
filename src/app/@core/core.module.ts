@@ -4,9 +4,11 @@ import { MaterialModule } from '../@material/material.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ActionService } from './services/action.service';
 
 const SERVICES: any = [
-	CropService
+	CropService,
+	ActionService
 ];
 
 @NgModule({

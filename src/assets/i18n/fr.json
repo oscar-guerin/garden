@@ -9,5 +9,8 @@
     "crop": "Culture",
     "crops": "Cultures",
     "name": "Nom"
+  },
+  "ACTION": {
+    "name": "Name"
   }
 }

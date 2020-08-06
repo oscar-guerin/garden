@@ -1,13 +1,16 @@
 {
-	"SHARED": {
-      "backToList": "Back to list",
-      "edit": "Edit",
-      "save": "Save",
-      "language": "Language"
-    },
-	"CROP": {
-		"crop": "Crop",
-		"crops": "Crops",
-		"name": "Name"
-	}
+  "SHARED": {
+    "backToList": "Back to list",
+    "edit": "Edit",
+    "save": "Save",
+    "language": "Language"
+  },
+  "CROP": {
+    "crop": "Crop",
+    "crops": "Crops",
+    "name": "Name"
+  },
+  "ACTION": {
+    "name": "Name"
+  }
 }
