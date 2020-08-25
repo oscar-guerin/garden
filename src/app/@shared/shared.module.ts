@@ -4,9 +4,11 @@ import { CoreModule } from '../@core/core.module';
 import { RouterModule } from '@angular/router';
 import { LanguageSwitcherComponent } from './language-switcher/language-switcher.component';
 import { EditActionComponent } from './edit-action/edit-action.component';
+import { DetailActionComponent } from './detail-action/detail-action.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
+	DetailActionComponent,
 	EditActionComponent
 ];
 
