@@ -14,6 +14,9 @@ const SERVICES: any = [
 @NgModule({
 	imports: [
 		MaterialModule,
+		TranslateModule,
+		CommonModule,
+		ReactiveFormsModule,
 	],
 	exports: [
 		MaterialModule,

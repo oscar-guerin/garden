@@ -3,15 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CropsComponent } from './crops.component';
 import { EditCropComponent } from './edit-crop/edit-crop.component';
 import { ListCropComponent } from './list-crop/list-crop.component';
-import { CoreModule } from '../@core/core.module';
 import { DetailCropComponent } from './detail-crop/detail-crop.component';
-
-const COMPONENTS: any = [
-	CropsComponent,
-	DetailCropComponent,
-	EditCropComponent,
-	ListCropComponent
-];
 
 const routes: Routes = [
 	{
@@ -43,13 +35,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	declarations: [
-		...COMPONENTS
-	],
-	imports: [RouterModule.forChild(routes), CoreModule],
+	declarations: [],
+	imports: [RouterModule.forChild(routes)],
 	exports: [
 		RouterModule,
-		...COMPONENTS
 	]
 })
 export class CropsRoutingModule {

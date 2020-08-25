@@ -13,6 +13,7 @@
   },
   "ACTION": {
     "action": "Action",
+    "actions": "Actions",
     "name": "Name",
     "addStep": "Add step",
     "stepValue": "Step"
