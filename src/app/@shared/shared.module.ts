@@ -6,6 +6,7 @@ import { LanguageSwitcherComponent } from './language-switcher/language-switcher
 import { EditActionComponent } from './edit-action/edit-action.component';
 import { DetailActionComponent } from './detail-action/detail-action.component';
 import { StrategyControlComponent } from './form-controls/strategy-control/strategy-control.component';
+import { PeriodTileComponent } from './period-tile/period-tile.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -29,7 +30,8 @@ const FORM_CONTROLS: any = [
 	declarations: [
 		...EXPORTABLE_COMPONENTS,
 		...FORM_CONTROLS,
-		LanguageSwitcherComponent
+		LanguageSwitcherComponent,
+		PeriodTileComponent
 	],
 	providers: [],
 })
