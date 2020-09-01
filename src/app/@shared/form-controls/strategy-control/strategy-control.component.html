@@ -1,2 +1,8 @@
 <ng-container [formGroup]="form">
+    <div *ngIf="periods$ | async as periods"
+         class="d-flex">
+        <app-period-tile *ngFor="let period of periods"
+                         [period]="period">
+        </app-period-tile>
+    </div>
 </ng-container>
