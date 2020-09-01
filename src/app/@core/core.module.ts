@@ -5,10 +5,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActionService } from './services/action.service';
+import { StrategyService } from './services/strategy.service';
 
 const SERVICES: any = [
 	CropService,
-	ActionService
+	ActionService,
+	StrategyService
 ];
 
 @NgModule({
