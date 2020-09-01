@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Strategy } from '../../../@core/models/strategy';
 import { AbstractPrimitiveControl } from '../abstract-primitive-control';
@@ -20,11 +20,18 @@ import { Observable } from 'rxjs';
 })
 export class StrategyControlComponent extends AbstractPrimitiveControl<Strategy> {
 
-	public periods$: Observable<Page<Period>>
+	@Input()
+	public strategy: Strategy;
+
+	public periods$: Observable<Page<Period>>;
+	public selectedPeriod: Period;
 
 	public constructor(private periodService: PeriodService) {
 		super('strategy', '');
-
 		this.periods$ = this.periodService.findAll();
+	}
+
+	public onPeriodSelected(period: Period): void {
+		this.selectedPeriod = period;
 	}
 }

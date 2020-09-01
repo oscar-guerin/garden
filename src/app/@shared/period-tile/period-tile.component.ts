@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Period } from '../../@core/models/period';
 
 @Component({
@@ -9,7 +9,8 @@ import { Period } from '../../@core/models/period';
             display: block;
             width: 30px;
             height: 15px;
-            background-color: gray;
+            background-color: #cccccc44;
+            border: 1px white solid;
         }
 	`]
 })
@@ -21,6 +22,7 @@ export class PeriodTileComponent {
 	@Output()
 	public selected: EventEmitter<Period> = new EventEmitter<Period>();
 
+	@HostListener('click', ['$event'])
 	public emit(): void {
 		this.selected.emit(this.period);
 	}
