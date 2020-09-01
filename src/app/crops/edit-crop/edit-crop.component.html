@@ -1,25 +1,28 @@
-<ng-container *ngIf="crop$ | async as crop">
-    {{ crop.name }}
-</ng-container>
 <form [formGroup]="form"
-      class="row">
-    <mat-form-field>
+      *ngIf="crop$ | async as crop"
+      class="container">
+    <h1 class="row">{{ crop.name }}</h1>
+    <mat-form-field class="row">
         <mat-label>{{ 'CROP.name' | translate }}</mat-label>
         <label>
             <input formControlName="name"
                    matInput>
         </label>
     </mat-form-field>
-    <div *ngIf="crop$ | async as crop">
-        <h2>{{ 'ACTION.actions' | translate }}</h2>
-        <app-detail-action *ngFor="let action of (crop.actions$ | async)"
-                           [action]="action"></app-detail-action>
+    <div class="col-12">
+        <h2 class="row">{{ 'ACTION.actions' | translate }}</h2>
+        <mat-accordion class="row mb-2">
+            <app-detail-action *ngFor="let action of (crop.actions$ | async)"
+                               [action]="action"></app-detail-action>
+        </mat-accordion>
         <button (click)="openActionDialog()"
+                class="row"
                 mat-flat-button>
             {{ 'CROP.addAction' | translate }}
         </button>
     </div>
     <button (click)="submit()"
+            class="row"
             mat-flat-button>
         {{ 'SHARED.save' | translate }}
     </button>
