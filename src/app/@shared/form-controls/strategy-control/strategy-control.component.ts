@@ -6,6 +6,8 @@ import { PeriodService } from '../../../@core/services/period.service';
 import { Period } from '../../../@core/models/period';
 import { Page } from '@witty-services/ngx-repository';
 import { Observable } from 'rxjs';
+import { Crop } from '../../../@core/models/crop';
+import { Action } from '../../../@core/models/action';
 
 @Component({
 	selector: 'app-strategy-control',
@@ -21,10 +23,13 @@ import { Observable } from 'rxjs';
 export class StrategyControlComponent extends AbstractPrimitiveControl<Strategy> {
 
 	@Input()
+	public crop: Crop;
+	@Input()
 	public strategy: Strategy;
 
 	public periods$: Observable<Page<Period>>;
 	public selectedPeriod: Period;
+	public selectedAction: Action;
 
 	public constructor(private periodService: PeriodService) {
 		super('strategy', '');
