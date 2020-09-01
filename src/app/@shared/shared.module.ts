@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { LanguageSwitcherComponent } from './language-switcher/language-switcher.component';
 import { EditActionComponent } from './edit-action/edit-action.component';
 import { DetailActionComponent } from './detail-action/detail-action.component';
+import { StrategyControlComponent } from './form-controls/strategy-control/strategy-control.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -12,16 +13,22 @@ const EXPORTABLE_COMPONENTS: any = [
 	EditActionComponent
 ];
 
+const FORM_CONTROLS: any = [
+	StrategyControlComponent
+]
+
 @NgModule({
 	imports: [
 		CoreModule,
 		RouterModule
 	],
 	exports: [
-		...EXPORTABLE_COMPONENTS
+		...EXPORTABLE_COMPONENTS,
+		...FORM_CONTROLS
 	],
 	declarations: [
 		...EXPORTABLE_COMPONENTS,
+		...FORM_CONTROLS,
 		LanguageSwitcherComponent
 	],
 	providers: [],
