@@ -9,7 +9,8 @@
     "crop": "Crop",
     "crops": "Crops",
     "name": "Name",
-    "addAction": "Add action"
+    "addAction": "Add action",
+    "addStrategy": "Add strategy"
   },
   "ACTION": {
     "action": "Action",
@@ -17,5 +18,9 @@
     "name": "Name",
     "addStep": "Add step",
     "stepValue": "Step"
+  },
+  "STRATEGY": {
+    "strategy": "Strategy",
+    "strategies": "Strategies"
   }
 }
