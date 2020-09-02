@@ -19,7 +19,7 @@ export class Strategy {
 	public name: string;
 
 	@Column()
-	public plannedActions: Action[];
+	public plannedActions: Action[] = [];
 
 	public constructor(data: Partial<Strategy> = {}) {
 		Object.assign(this, data);

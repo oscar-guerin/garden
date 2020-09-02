@@ -28,6 +28,10 @@
         </button>
     </div>
     <div>
-        <div *ngFor="let action of strategy.plannedActions; let i = index">{{ i }} - {{ action.name }}</div>
+        <div *ngFor="let action of strategy.plannedActions; let i = index">
+            <ng-container *ngIf="action">
+                {{ i }} - {{ action.name }}
+            </ng-container>
+        </div>
     </div>
 </ng-container>

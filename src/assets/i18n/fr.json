@@ -9,7 +9,8 @@
     "crop": "Culture",
     "crops": "Cultures",
     "name": "Nom",
-    "addAction": "Ajouter une action"
+    "addAction": "Ajouter une action",
+    "addStrategy": "Ajouter une stratégie"
   },
   "ACTION": {
     "action": "Action",
@@ -17,5 +18,9 @@
     "name": "Name",
     "addStep": "Ajouter une étape",
     "stepValue": "Etape"
+  },
+  "STRATEGY": {
+    "strategy": "Strategy",
+    "strategies": "Strategies"
   }
 }
