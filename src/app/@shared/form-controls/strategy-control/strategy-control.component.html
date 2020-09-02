@@ -27,4 +27,7 @@
             </mat-icon>
         </button>
     </div>
+    <div>
+        <div *ngFor="let action of strategy.plannedActions; let i = index">{{ i }} - {{ action.name }}</div>
+    </div>
 </ng-container>
