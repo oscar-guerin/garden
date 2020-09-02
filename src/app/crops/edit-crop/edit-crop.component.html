@@ -23,7 +23,8 @@
     </div>
     <div class="col-12">
         <h2 class="row">{{ 'STRATEGY.strategies' | translate }}</h2>
-        <app-strategy-control></app-strategy-control>
+        <app-strategy-control [crop]="crop">
+        </app-strategy-control>
     </div>
     <button (click)="submit()"
             class="row"
