@@ -10,6 +10,8 @@ import { ObservableDestroy } from '@witty-services/ngx-common';
 import { MatDialog } from '@angular/material/dialog';
 import { EditActionComponent } from '../../@shared/edit-action/edit-action.component';
 import { Action } from '../../@core/models/action';
+import { Strategy } from '../../@core/models/strategy';
+import { EditStrategyComponent } from '../../@shared/edit-strategy/edit-strategy.component';
 
 @Component({
 	selector: 'app-edit-crop',
@@ -46,9 +48,13 @@ export class EditCropComponent extends ObservableDestroy {
 	public openActionDialog(action: Action = new Action()): void {
 		this.crop$.pipe(
 			first()
-		).subscribe((crop: Crop) => this.dialog.open(EditActionComponent, { data: { action, crop } })
-		)
+		).subscribe((crop: Crop) => this.dialog.open(EditActionComponent, { data: { action, crop } }))
+	}
 
+	public openStrategyDialog(strategy: Strategy = new Strategy()): void {
+		this.crop$.pipe(
+			first()
+		).subscribe((crop: Crop) => this.dialog.open(EditStrategyComponent, { data: { strategy, crop } }))
 	}
 
 	public submit(): void {

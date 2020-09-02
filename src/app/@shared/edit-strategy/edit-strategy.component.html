@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{ 'STRATEGY.strategy' | translate }}</h1>
+<form [formGroup]="form"
+      mat-dialog-content>
+    <app-strategy-control [crop]="data.crop"
+                          [strategy]="data.strategy"
+                          formControlName="strategy"></app-strategy-control>
+    <button (click)="submit()"
+            mat-flat-button>
+        {{ 'SHARED.save' | translate }}
+    </button>
+</form>

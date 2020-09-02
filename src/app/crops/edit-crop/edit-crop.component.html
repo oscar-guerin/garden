@@ -23,8 +23,11 @@
     </div>
     <div class="col-12">
         <h2 class="row">{{ 'STRATEGY.strategies' | translate }}</h2>
-        <app-strategy-control [crop]="crop">
-        </app-strategy-control>
+        <button (click)="openStrategyDialog()"
+                class="row"
+                mat-flat-button>
+            {{ 'STRATEGY.create' | translate }}
+        </button>
     </div>
     <button (click)="submit()"
             class="row"
