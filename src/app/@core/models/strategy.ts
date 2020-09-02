@@ -1,6 +1,7 @@
 import { FirebaseResource } from '@witty-services/ngx-firebase-repository';
 import { Column, Id, PathColumn } from '@witty-services/ngx-repository';
 import { merge } from 'lodash';
+import { Action } from './action';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops/:cropId/strategies',
@@ -18,7 +19,7 @@ export class Strategy {
 	public name: string;
 
 	@Column()
-	public plannedActions: number[];
+	public plannedActions: Action[];
 
 	public constructor(data: Partial<Strategy> = {}) {
 		Object.assign(this, data);
@@ -26,5 +27,11 @@ export class Strategy {
 
 	public merge(...actions: Partial<Strategy>[]): Strategy {
 		return merge(this, ...actions);
+	}
+
+	public planAction(periodId: number, action: Action): Strategy {
+		this.plannedActions[periodId] = action;
+
+		return this;
 	}
 }

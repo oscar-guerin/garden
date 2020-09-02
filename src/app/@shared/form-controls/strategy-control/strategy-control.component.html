@@ -6,7 +6,8 @@
                          [period]="period">
         </app-period-tile>
     </div>
-    <div *ngIf="selectedPeriod">
+    <div *ngIf="selectedPeriod"
+         class="d-flex align-content-between">
         <div>{{ selectedPeriod.id }}</div>
         <div>
             <mat-form-field>
@@ -19,6 +20,11 @@
                 </mat-select>
             </mat-form-field>
         </div>
-
+        <button (click)="planAction(selectedPeriod.id, selectedAction)"
+                mat-mini-fab>
+            <mat-icon>
+                done
+            </mat-icon>
+        </button>
     </div>
 </ng-container>
