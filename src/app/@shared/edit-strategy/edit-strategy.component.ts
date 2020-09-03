@@ -24,12 +24,12 @@ export class EditStrategyComponent {
 					   private readonly strategyService: StrategyService,
 					   private readonly fb: FormBuilder) {
 		this.form = this.fb.group({
-			strategy: [undefined]
+			strategy: [this.data.strategy]
 		});
 	}
 
 	public submit(): void {
-		this.strategyService.createOrUpdate(this.form.get('strategy').value).pipe(
+		this.strategyService.createOrUpdate(this.data.strategy.merge(this.form.get('strategy').value, { cropId: this.data.crop.id })).pipe(
 			first()
 		).subscribe(() => this.dialogRef.close());
 	}

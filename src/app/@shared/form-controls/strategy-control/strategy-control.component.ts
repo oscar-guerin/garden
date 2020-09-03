@@ -42,6 +42,7 @@ export class StrategyControlComponent extends AbstractPrimitiveControl<Strategy>
 
 	public planAction(periodId: number, action: Action): void {
 		this.field.setValue(this.strategy.planAction(periodId, action));
+		console.log(this.strategy);
 		this.selectedAction = undefined;
 		this.selectedPeriod = undefined;
 	}

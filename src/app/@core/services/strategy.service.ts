@@ -15,6 +15,7 @@ export class StrategyService {
 	}
 
 	public createOrUpdate(strategy: Strategy): Observable<string> {
+		console.log(strategy);
 		if (!!strategy.id) {
 			return this.strategyRepository.update(strategy).pipe(
 				switchMapTo(of(strategy.id))

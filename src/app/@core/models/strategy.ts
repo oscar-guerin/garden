@@ -19,18 +19,18 @@ export class Strategy {
 	public name: string;
 
 	@Column()
-	public plannedActions: Action[] = [];
+	public plannedActionIds: string[] = new Array(24).fill('');
 
 	public constructor(data: Partial<Strategy> = {}) {
 		Object.assign(this, data);
 	}
 
-	public merge(...actions: Partial<Strategy>[]): Strategy {
-		return merge(this, ...actions);
+	public merge(...strategies: Partial<Strategy>[]): Strategy {
+		return merge(this, ...strategies);
 	}
 
 	public planAction(periodId: number, action: Action): Strategy {
-		this.plannedActions[periodId] = action;
+		this.plannedActionIds[periodId] = action.id;
 
 		return this;
 	}
