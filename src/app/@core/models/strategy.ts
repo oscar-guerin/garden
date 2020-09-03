@@ -18,8 +18,8 @@ export class Strategy {
 	@Column()
 	public name: string;
 
-	@Column()
-	public plannedActionIds: string[] = new Array(24).fill('');
+	@Column({ type: () => Action })
+	public plannedActions: Action[] = new Array(24).fill(new Action());
 
 	public constructor(data: Partial<Strategy> = {}) {
 		Object.assign(this, data);
@@ -30,7 +30,7 @@ export class Strategy {
 	}
 
 	public planAction(periodId: number, action: Action): Strategy {
-		this.plannedActionIds[periodId] = action.id;
+		this.plannedActions[periodId] = action;
 
 		return this;
 	}
