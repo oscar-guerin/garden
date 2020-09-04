@@ -4,6 +4,8 @@ import { merge } from 'lodash';
 import { Action } from './action';
 import { ActionQuery } from '../queries/action.query';
 import { Observable } from 'rxjs';
+import { Strategy } from './strategy';
+import { StrategyQuery } from '../queries/strategy.query';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops',
@@ -23,6 +25,13 @@ export class Crop {
 		repository: () => FirebaseRepository
 	})
 	public actions$: Observable<Page<Action>>;
+
+	@SubCollection({
+		resourceType: () => Strategy,
+		params: (crop: Crop) => new StrategyQuery({ cropId: crop.id }),
+		repository: () => FirebaseRepository
+	})
+	public strategies$: Observable<Page<Strategy>>;
 
 	public constructor(data: Partial<Crop> = {}) {
 		Object.assign(this, data);
