@@ -1,0 +1,10 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{ strategy.name }}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngFor="let action of strategy.plannedActions">
+        {{ action.name }}
+    </div>
+</mat-expansion-panel>

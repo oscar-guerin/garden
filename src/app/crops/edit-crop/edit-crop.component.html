@@ -1,37 +1,41 @@
-<form [formGroup]="form"
-      *ngIf="crop$ | async as crop"
-      class="container">
-    <h1 class="row">{{ crop.name }}</h1>
-    <mat-form-field class="row">
-        <mat-label>{{ 'CROP.name' | translate }}</mat-label>
-        <label>
-            <input formControlName="name"
-                   matInput>
-        </label>
-    </mat-form-field>
-    <div class="col-12">
-        <h2 class="row">{{ 'ACTION.actions' | translate }}</h2>
-        <mat-accordion class="row mb-2">
-            <app-detail-action *ngFor="let action of (crop.actions$ | async)"
-                               [action]="action"></app-detail-action>
-        </mat-accordion>
-        <button (click)="openActionDialog()"
+<div *ngIf="crop$ | async as crop"
+     class="d-flex">
+    <form [formGroup]="form"
+          class="container">
+        <h1 class="row">{{ crop.name }}</h1>
+        <mat-form-field class="row">
+            <mat-label>{{ 'CROP.name' | translate }}</mat-label>
+            <label>
+                <input formControlName="name"
+                       matInput>
+            </label>
+        </mat-form-field>
+        <button (click)="submit()"
                 class="row"
                 mat-flat-button>
-            {{ 'CROP.addAction' | translate }}
+            {{ 'SHARED.save' | translate }}
         </button>
+    </form>
+    <div class="container">
+        <div class="col-12">
+            <h2 class="row">{{ 'ACTION.actions' | translate }}</h2>
+            <mat-accordion class="row mb-2">
+                <app-detail-action *ngFor="let action of (crop.actions$ | async)"
+                                   [action]="action"></app-detail-action>
+            </mat-accordion>
+            <button (click)="openActionDialog()"
+                    class="row"
+                    mat-flat-button>
+                {{ 'CROP.addAction' | translate }}
+            </button>
+        </div>
+        <div class="col-12">
+            <h2 class="row">{{ 'STRATEGY.strategies' | translate }}</h2>
+            <button (click)="openStrategyDialog()"
+                    class="row"
+                    mat-flat-button>
+                {{ 'CROP.addStrategy' | translate }}
+            </button>
+        </div>
     </div>
-    <div class="col-12">
-        <h2 class="row">{{ 'STRATEGY.strategies' | translate }}</h2>
-        <button (click)="openStrategyDialog()"
-                class="row"
-                mat-flat-button>
-            {{ 'CROP.addStrategy' | translate }}
-        </button>
-    </div>
-    <button (click)="submit()"
-            class="row"
-            mat-flat-button>
-        {{ 'SHARED.save' | translate }}
-    </button>
-</form>
+</div>
