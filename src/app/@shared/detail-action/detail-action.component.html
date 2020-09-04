@@ -4,7 +4,14 @@
             {{ action.name }}
         </mat-panel-title>
     </mat-expansion-panel-header>
-    <div *ngFor="let step of action.steps">
-        {{ step }}
+    <div>
+        <div *ngFor="let step of action.steps">
+            {{ step }}
+        </div>
+        <button mat-icon-button>
+            <mat-icon>
+                more_vert
+            </mat-icon>
+        </button>
     </div>
 </mat-expansion-panel>
