@@ -16,7 +16,8 @@
             {{ 'SHARED.save' | translate }}
         </button>
     </form>
-    <div class="container">
+    <div *ngIf="crop.id"
+         class="container">
         <div class="col-12">
             <h2 class="row">{{ 'ACTION.actions' | translate }}</h2>
             <mat-accordion class="row mb-2">

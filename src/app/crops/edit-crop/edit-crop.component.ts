@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { merge, Observable, of } from 'rxjs';
 import { Crop } from '../../@core/models/crop';
-import { first, map, switchMap, takeUntil } from 'rxjs/operators';
+import { first, map, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
 import { CropService } from '../../@core/services/crop.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ifNotNull } from '@witty-services/rxjs-common';
+import { ifNotNull, ifNull } from '@witty-services/rxjs-common';
 import { ObservableDestroy } from '@witty-services/ngx-common';
 import { MatDialog } from '@angular/material/dialog';
 import { EditActionComponent } from '../../@shared/edit-action/edit-action.component';
@@ -28,11 +28,20 @@ export class EditCropComponent extends ObservableDestroy {
 					   private readonly cropService: CropService,
 					   private readonly fb: FormBuilder) {
 		super();
-		this.crop$ = route.paramMap.pipe(
+
+		const editCrop$: Observable<Crop> = route.paramMap.pipe(
 			map((paramMap: ParamMap) => paramMap.get('id')),
 			ifNotNull(),
-			switchMap((id: string) => cropService.findById(id))
+			switchMap((id: string) => cropService.findById(id)),
 		);
+
+		const createCrop$: Observable<Crop> = route.paramMap.pipe(
+			map((paramMap: ParamMap) => paramMap.get('id')),
+			ifNull(),
+			switchMapTo(of(new Crop()))
+		);
+
+		this.crop$ = merge(editCrop$, createCrop$);
 
 		this.form = this.fb.group({
 			name: ['']
@@ -48,7 +57,7 @@ export class EditCropComponent extends ObservableDestroy {
 	public openActionDialog(action: Action = new Action()): void {
 		this.crop$.pipe(
 			first()
-		).subscribe((crop: Crop) => this.dialog.open(EditActionComponent, { data: { action, crop } }))
+		).subscribe((crop: Crop) => this.dialog.open(EditActionComponent, { data: { action, crop }, width: '40vw' }))
 	}
 
 	public openStrategyDialog(strategy: Strategy = new Strategy()): void {

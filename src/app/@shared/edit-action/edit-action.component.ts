@@ -30,7 +30,7 @@ export class EditActionComponent extends ObservableDestroy {
 					   private readonly translateService: TranslateService,
 					   private readonly fb: FormBuilder) {
 		super();
-
+		console.log(data);
 		this.form = this.fb.group({
 			name: [this.data.action.name],
 			steps: this.fb.array([])

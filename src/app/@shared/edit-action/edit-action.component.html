@@ -1,37 +1,45 @@
 <h1 mat-dialog-title>{{ 'ACTION.action' | translate }}</h1>
 <form [formGroup]="form"
-      mat-dialog-content>
-    <mat-form-field>
+      class="container-fluid">
+    <mat-form-field class="row">
         <mat-label>{{ 'ACTION.name' | translate }}</mat-label>
         <label>
             <input formControlName="name"
                    matInput>
         </label>
     </mat-form-field>
-    <div formArrayName="steps">
-        <div *ngFor="let step of stepsArrayControl.controls; let i = index">
-            {{ i + 1 }}
-            <mat-form-field>
+    <ng-container formArrayName="steps">
+        <div *ngFor="let step of stepsArrayControl.controls; let i = index"
+             class="row align-items-center">
+            <div class="col-2">{{ i + 1 }}</div>
+            <mat-form-field class="col-8">
                 <mat-label>{{ 'ACTION.stepValue' | translate }}</mat-label>
-                <label>
-                    <input [formControlName]="i"
-                           matInput>
-                </label>
+                <textarea [formControlName]="i"
+                          aria-label=""
+                          class="w-100"
+                          matInput></textarea>
             </mat-form-field>
-            <button (click)="removeStep(i)"
-                    aria-label="{{ 'ACTION.removeStep' | translate }}"
-                    color="warn"
-                    mat-mini-fab>
-                <mat-icon>delete</mat-icon>
-            </button>
+            <div class="col-2">
+                <button (click)="removeStep(i)"
+                        aria-label="{{ 'ACTION.removeStep' | translate }}"
+                        color="warn"
+                        mat-mini-fab>
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
         </div>
+    </ng-container>
+    <div class="row">
         <button (click)="addStep()"
                 mat-flat-button>
             {{ 'ACTION.addStep' | translate }}
         </button>
     </div>
+</form>
+<div class="d-flex justify-content-end"
+     mat-dialog-actions>
     <button (click)="submit()"
             mat-flat-button>
         {{ 'SHARED.save' | translate }}
     </button>
-</form>
+</div>
