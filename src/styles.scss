@@ -41,11 +41,20 @@ html, body {
 
 body {
   margin: 0;
-  font-family: 'Titillium Web', 'Helvetica Neue', sans-serif;
+  font-family: 'Syne', 'Helvetica Neue', sans-serif;
 }
 
 .mat-toolbar {
   font: inherit !important;
+}
+
+mat-row {
+  transition: background-color 0.2s ease-out;
+}
+
+mat-row:hover {
+  background-color: #CCCCCC22;
+  cursor: pointer;
 }
 
 :focus {
