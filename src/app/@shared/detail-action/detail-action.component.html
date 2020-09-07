@@ -23,7 +23,8 @@
 </mat-expansion-panel>
 
 <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <button (click)="edit()"
+            mat-menu-item>
         <mat-icon>edit</mat-icon>
         <span>{{ 'ACTION.edit' | translate }}</span>
     </button>

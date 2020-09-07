@@ -22,6 +22,7 @@
             <h2 class="row">{{ 'ACTION.actions' | translate }}</h2>
             <mat-accordion class="row mb-2">
                 <app-detail-action *ngFor="let action of (crop.actions$ | async)"
+                                   (edit$)="openActionDialog(action)"
                                    [action]="action"></app-detail-action>
             </mat-accordion>
             <button (click)="openActionDialog()"
