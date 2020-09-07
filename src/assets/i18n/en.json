@@ -17,7 +17,9 @@
     "actions": "Actions",
     "name": "Name",
     "addStep": "Add step",
-    "stepValue": "Step"
+    "stepValue": "Step",
+    "edit": "Edit action",
+    "delete": "Delete action"
   },
   "STRATEGY": {
     "strategy": "Strategy",

@@ -1,17 +1,35 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>
-            {{ action.name }}
+            <div class="d-flex align-items-center">
+                <button [matMenuTriggerFor]="menu"
+                        mat-icon-button>
+                    <mat-icon>
+                        more_vert
+                    </mat-icon>
+                </button>
+                <div>
+                    {{ action.name }}
+                </div>
+            </div>
         </mat-panel-title>
     </mat-expansion-panel-header>
     <div>
-        <div *ngFor="let step of action.steps">
-            {{ step }}
+        <div *ngFor="let step of action.steps; let i = index"
+             class="mb-2">
+            <strong>{{ i + 1 }}.</strong> {{ step }}
         </div>
-        <button mat-icon-button>
-            <mat-icon>
-                more_vert
-            </mat-icon>
-        </button>
     </div>
 </mat-expansion-panel>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+        <mat-icon>edit</mat-icon>
+        <span>{{ 'ACTION.edit' | translate }}</span>
+    </button>
+    <button (click)="delete()"
+            mat-menu-item>
+        <mat-icon>delete</mat-icon>
+        <span>{{ 'ACTION.delete' | translate }}</span>
+    </button>
+</mat-menu>

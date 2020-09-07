@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MATERIAL_MODULES: any = [
 	MatToolbarModule,
@@ -18,7 +19,8 @@ const MATERIAL_MODULES: any = [
 	MatIconModule,
 	MatSelectModule,
 	MatDialogModule,
-	MatExpansionModule
+	MatExpansionModule,
+	MatMenuModule
 ]
 
 @NgModule({

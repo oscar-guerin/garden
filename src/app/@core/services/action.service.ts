@@ -31,4 +31,8 @@ export class ActionService {
 	public findById(id: string): Observable<Action> {
 		return this.actionRepository.findById(id);
 	}
+
+	public delete(action: Action): Observable<void> {
+		return this.actionRepository.delete(action);
+	}
 }

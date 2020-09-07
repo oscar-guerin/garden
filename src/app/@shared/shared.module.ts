@@ -9,6 +9,7 @@ import { StrategyControlComponent } from './form-controls/strategy-control/strat
 import { PeriodTileComponent } from './period-tile/period-tile.component';
 import { EditStrategyComponent } from './edit-strategy/edit-strategy.component';
 import { DetailStrategyComponent } from './detail-strategy/detail-strategy.component';
+import { _MatMenuDirectivesModule } from '@angular/material/menu';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -25,7 +26,8 @@ const FORM_CONTROLS: any = [
 @NgModule({
 	imports: [
 		CoreModule,
-		RouterModule
+		RouterModule,
+		_MatMenuDirectivesModule
 	],
 	exports: [
 		...EXPORTABLE_COMPONENTS,
