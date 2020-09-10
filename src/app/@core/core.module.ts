@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActionService } from './services/action.service';
 import { StrategyService } from './services/strategy.service';
 import { PeriodService } from './services/period.service';
+import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 
 const SERVICES: any = [
 	CropService,
@@ -14,6 +15,10 @@ const SERVICES: any = [
 	StrategyService,
 	PeriodService
 ];
+
+const PIPES: any = [
+	EnumToArrayPipe
+]
 
 @NgModule({
 	imports: [
@@ -27,8 +32,11 @@ const SERVICES: any = [
 		TranslateModule,
 		CommonModule,
 		ReactiveFormsModule,
+		...PIPES
 	],
-	declarations: [],
+	declarations: [
+		...PIPES
+	],
 	providers: [
 		...SERVICES
 	],

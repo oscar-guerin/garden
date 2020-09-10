@@ -1,13 +1,26 @@
 <h1 mat-dialog-title>{{ 'ACTION.action' | translate }}</h1>
 <form [formGroup]="form"
       class="container-fluid">
-    <mat-form-field class="row">
-        <mat-label>{{ 'ACTION.name' | translate }}</mat-label>
-        <label>
+    <div class="row">
+        <mat-form-field>
+            <mat-label>{{ 'ACTION.name' | translate }}</mat-label>
             <input formControlName="name"
+                   aria-label=""
                    matInput>
-        </label>
-    </mat-form-field>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field>
+            <mat-label>{{ 'ACTION.actionType' | translate }}</mat-label>
+            <mat-select formControlName="actionType">
+                <mat-option *ngFor="let actionType of actionTypes | enumToArray"
+                            [value]="actionType">
+                    {{ actionType | translate }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <h2 class="row">{{ 'ACTION.steps' | translate }}</h2>
     <ng-container formArrayName="steps">
         <div *ngFor="let step of stepsArrayControl.controls; let i = index"
              class="row align-items-center">
@@ -31,7 +44,7 @@
     </ng-container>
     <div class="row">
         <button (click)="addStep()"
-                mat-flat-button>
+                mat-stroked-button>
             {{ 'ACTION.addStep' | translate }}
         </button>
     </div>
@@ -39,6 +52,7 @@
 <div class="d-flex justify-content-end"
      mat-dialog-actions>
     <button (click)="submit()"
+            color="accent"
             mat-flat-button>
         {{ 'SHARED.save' | translate }}
     </button>

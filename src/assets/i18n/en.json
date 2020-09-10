@@ -16,6 +16,8 @@
     "action": "Action",
     "actions": "Actions",
     "name": "Name",
+    "actionType": "Action type",
+    "steps": "Steps",
     "addStep": "Add step",
     "stepValue": "Step",
     "edit": "Edit action",

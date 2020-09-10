@@ -8,6 +8,7 @@ import { ActionService } from '../../@core/services/action.service';
 import { Action } from '../../@core/models/action';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Crop } from '../../@core/models/crop';
+import { ActionType } from '../../@core/enumerations/action-type';
 
 interface EditActionDialogData {
 	crop: Crop;
@@ -21,6 +22,7 @@ interface EditActionDialogData {
 export class EditActionComponent extends ObservableDestroy {
 
 	public form: FormGroup;
+	public actionTypes: typeof ActionType = ActionType;
 
 	public constructor(@Inject(MAT_DIALOG_DATA) public data: EditActionDialogData,
 					   private readonly dialogRef: MatDialogRef<EditActionComponent>,
@@ -32,10 +34,13 @@ export class EditActionComponent extends ObservableDestroy {
 		super();
 		this.form = this.fb.group({
 			name: [this.data.action.name],
-			steps: this.fb.array([])
+			actionType: [this.data.action.actionType],
+			steps: this.fb.array([undefined])
 		});
 
-		this.data.action.steps.forEach((step: string) => this.addStep(step));
+		if (this.data.action.steps) {
+			this.data.action.steps.forEach((step: string) => this.addStep(step));
+		}
 	}
 
 	public get stepsArrayControl(): FormArray {

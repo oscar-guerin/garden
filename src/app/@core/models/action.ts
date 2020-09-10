@@ -1,6 +1,7 @@
 import { FirebaseResource } from '@witty-services/ngx-firebase-repository';
 import { Column, Id, PathColumn } from '@witty-services/ngx-repository';
 import { merge } from 'lodash';
+import { ActionType } from '../enumerations/action-type';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops/:cropId/actions',
@@ -16,6 +17,9 @@ export class Action {
 
 	@Column()
 	public name: string;
+
+	@Column()
+	public actionType: ActionType;
 
 	@Column()
 	public steps: string[];

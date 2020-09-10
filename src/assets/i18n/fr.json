@@ -15,14 +15,16 @@
   "ACTION": {
     "action": "Action",
     "actions": "Actions",
-    "name": "Name",
+    "name": "Nom",
+    "actionType": "Type d'action",
+    "steps": "Etapes",
     "addStep": "Ajouter une étape",
     "stepValue": "Etape",
     "edit": "Modifier l'action",
     "delete": "Supprimer l'action"
   },
   "STRATEGY": {
-    "strategy": "Strategy",
+    "strategy": "Strategie",
     "strategies": "Strategies"
   },
   "SOWING": "Semis",
