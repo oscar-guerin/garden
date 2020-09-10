@@ -41,7 +41,7 @@ const firebaseApp: () => firebase.firestore.Firestore = () =>
 				useFactory: httpLoaderFactory,
 				deps: [HttpClient]
 			},
-			defaultLanguage: 'en'
+			defaultLanguage: 'fr'
 		})
 	],
 	providers: [],

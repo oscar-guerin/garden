@@ -11,6 +11,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
 
 	public constructor(translateService: TranslateService) {
-		translateService.use('en');
+		translateService.use('fr');
 	}
 }

@@ -24,5 +24,9 @@
   "STRATEGY": {
     "strategy": "Strategy",
     "strategies": "Strategies"
-  }
+  },
+  "SOWING": "Semis",
+  "PLANTING": "Plantation",
+  "CARE": "Entretien",
+  "HARVEST": "Récolte"
 }
