@@ -3,7 +3,9 @@
     "backToList": "Retour à la liste",
     "edit": "Modifier",
     "save": "Enregistrer",
-    "language": "Langue"
+    "language": "Langue",
+    "yes": "Oui",
+    "no": "Non"
   },
   "CROP": {
     "crop": "Culture",
@@ -26,6 +28,10 @@
   "STRATEGY": {
     "strategy": "Strategie",
     "strategies": "Strategies"
+  },
+  "CONFIRM": {
+    "confirm": "Confirmation",
+    "delete": "Êtes-vous sur de vouloir supprimer cet élément ?"
   },
   "SOWING": "Semis",
   "PLANTING": "Plantation",

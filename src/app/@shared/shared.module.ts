@@ -10,13 +10,15 @@ import { PeriodTileComponent } from './period-tile/period-tile.component';
 import { EditStrategyComponent } from './edit-strategy/edit-strategy.component';
 import { DetailStrategyComponent } from './detail-strategy/detail-strategy.component';
 import { _MatMenuDirectivesModule } from '@angular/material/menu';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
 	DetailActionComponent,
 	DetailStrategyComponent,
 	EditActionComponent,
-	EditStrategyComponent
+	EditStrategyComponent,
+	ConfirmComponent
 ];
 
 const FORM_CONTROLS: any = [

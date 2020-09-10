@@ -3,7 +3,9 @@
     "backToList": "Back to list",
     "edit": "Edit",
     "save": "Save",
-    "language": "Language"
+    "language": "Language",
+    "yes": "Yes",
+    "no": "No"
   },
   "CROP": {
     "crop": "Crop",
@@ -26,6 +28,10 @@
   "STRATEGY": {
     "strategy": "Strategy",
     "strategies": "Strategies"
+  },
+  "CONFIRM": {
+    "confirm": "Confirmation",
+    "delete": "Are you sure you want to delete this element ?"
   },
   "SOWING": "Sowing",
   "PLANTING": "Planting",

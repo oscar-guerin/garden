@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { DialogService } from './@core/services/dialog.service';
 
 @Component({
 	selector: 'app-root',
@@ -10,7 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
-	public constructor(translateService: TranslateService) {
+	public constructor(translateService: TranslateService,
+					   private readonly dialogService: DialogService) { // DO NOT REMOVE
 		translateService.use('fr');
 	}
 }

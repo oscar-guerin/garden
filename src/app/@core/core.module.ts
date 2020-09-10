@@ -8,12 +8,14 @@ import { ActionService } from './services/action.service';
 import { StrategyService } from './services/strategy.service';
 import { PeriodService } from './services/period.service';
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
+import { DialogService } from './services/dialog.service';
 
 const SERVICES: any = [
 	CropService,
 	ActionService,
 	StrategyService,
-	PeriodService
+	PeriodService,
+	DialogService
 ];
 
 const PIPES: any = [

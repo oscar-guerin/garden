@@ -1,6 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Action } from '../../@core/models/action';
 import { ActionService } from '../../@core/services/action.service';
+import { of } from 'rxjs';
+import { confirm } from '../../@core/operators/confirm.operator'
+import { switchMap } from 'rxjs/operators';
+import { ConfirmTextCode } from '../../@core/enumerations/confirm-text-code';
 
 @Component({
 	selector: 'app-detail-action',
@@ -25,6 +29,9 @@ export class DetailActionComponent {
 	}
 
 	public delete(): void {
-		this.actionService.delete(this.action);
+		of(this.action).pipe(
+			confirm(ConfirmTextCode.DELETE),
+			switchMap((action: Action) => this.actionService.delete(action))
+		).subscribe();
 	}
 }
