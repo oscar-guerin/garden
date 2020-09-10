@@ -35,11 +35,13 @@ export class EditActionComponent extends ObservableDestroy {
 		this.form = this.fb.group({
 			name: [this.data.action.name],
 			actionType: [this.data.action.actionType],
-			steps: this.fb.array([undefined])
+			steps: this.fb.array([])
 		});
 
 		if (this.data.action.steps) {
 			this.data.action.steps.forEach((step: string) => this.addStep(step));
+		} else {
+			this.addStep();
 		}
 	}
 
