@@ -27,7 +27,9 @@
   },
   "STRATEGY": {
     "strategy": "Strategie",
-    "strategies": "Strategies"
+    "strategies": "Strategies",
+    "edit": "Modifier la stratégie",
+    "delete": "Supprimer la stratégie"
   },
   "CONFIRM": {
     "confirm": "Confirmation",

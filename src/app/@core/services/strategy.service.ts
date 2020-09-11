@@ -32,4 +32,8 @@ export class StrategyService {
 	public findById(id: string): Observable<Strategy> {
 		return this.strategyRepository.findById(id);
 	}
+
+	public delete(strategy: Strategy): Observable<void> {
+		return this.strategyRepository.delete(strategy);
+	}
 }

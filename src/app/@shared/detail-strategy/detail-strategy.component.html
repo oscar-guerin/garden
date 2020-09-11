@@ -1,10 +1,33 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>
-            {{ strategy.name }}
+            <div class="d-flex align-items-center">
+                <button [matMenuTriggerFor]="menu"
+                        mat-icon-button>
+                    <mat-icon>
+                        more_vert
+                    </mat-icon>
+                </button>
+                <div>
+                    {{ strategy.name }}
+                </div>
+            </div>
         </mat-panel-title>
     </mat-expansion-panel-header>
     <div *ngFor="let action of strategy.plannedActions">
         {{ action.name }}
     </div>
 </mat-expansion-panel>
+
+<mat-menu #menu="matMenu">
+    <button (click)="edit()"
+            mat-menu-item>
+        <mat-icon>edit</mat-icon>
+        <span>{{ 'STRATEGY.edit' | translate }}</span>
+    </button>
+    <button (click)="delete()"
+            mat-menu-item>
+        <mat-icon>delete</mat-icon>
+        <span>{{ 'STRATEGY.delete' | translate }}</span>
+    </button>
+</mat-menu>

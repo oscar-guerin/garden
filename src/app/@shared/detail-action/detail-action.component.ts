@@ -16,6 +16,7 @@ import { ConfirmTextCode } from '../../@core/enumerations/confirm-text-code';
 	`]
 })
 export class DetailActionComponent {
+
 	@Input()
 	public action: Action;
 	@Output()
