@@ -50,6 +50,9 @@ $garden-front-theme: mat-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+$hover-color: #CCCCCC22;
+$border-color: lightgray;
+
 html, body {
   height: 100%;
 }
@@ -63,29 +66,35 @@ body {
   font: inherit !important;
 }
 
-.mat-expansion-panel {
-  box-shadow: none !important;
-  border: 1px lightgray solid;
-}
-
-.mat-expansion-panel-header {
-  transition: background-color 0.2s ease-out !important;
-}
-
-.mat-expansion-panel-header:hover {
-  background-color: #CCCCCC22 !important;
-  cursor: pointer;
-}
-
-mat-row {
-  transition: background-color 0.2s ease-out;
+.mat-expansion-indicator::after {
+  color: black !important;
 }
 
 mat-row:hover {
-  background-color: #CCCCCC22;
   cursor: pointer;
+}
+
+.mat-select-panel {
+  padding: 8px 0 !important;
+}
+
+.mat-option {
+  color: black !important;
 }
 
 :focus {
   outline: none !important;
+}
+
+.mat-menu-panel, .mat-select-panel, .mat-expansion-panel {
+  box-shadow: none !important;
+  border: 1px $border-color solid;
+}
+
+mat-row .mat-menu-item, .mat-option, .mat-expansion-panel-header {
+  transition: background-color 0.2s ease-out !important;
+}
+
+mat-row:hover, .mat-menu-item:hover, .mat-option:hover, .mat-expansion-panel-header:hover {
+  background-color: $hover-color !important;
 }
