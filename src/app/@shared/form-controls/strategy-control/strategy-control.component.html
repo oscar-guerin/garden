@@ -3,6 +3,7 @@
          class="d-flex">
         <app-period-tile *ngFor="let period of periods"
                          (select)="onPeriodSelected($event)"
+                         [selected]="selectedPeriod && selectedPeriod.id == period.id"
                          [period]="period">
         </app-period-tile>
     </div>

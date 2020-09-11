@@ -35,6 +35,6 @@ export class PeriodTileComponent {
 
 	@HostListener('click', ['$event'])
 	public emit(): void {
-		this.select.emit(this.period);
+		this.select.emit(this.selected ? undefined : this.period);
 	}
 }
