@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const MATERIAL_MODULES: any = [
 	MatToolbarModule,
@@ -20,7 +21,8 @@ const MATERIAL_MODULES: any = [
 	MatSelectModule,
 	MatDialogModule,
 	MatExpansionModule,
-	MatMenuModule
+	MatMenuModule,
+	MatTooltipModule
 ]
 
 @NgModule({
