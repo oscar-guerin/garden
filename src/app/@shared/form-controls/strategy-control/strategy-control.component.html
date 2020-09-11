@@ -1,6 +1,7 @@
-<ng-container [formGroup]="form">
+<div [formGroup]="form"
+     class="container">
     <div *ngIf="periods$ | async as periods"
-         class="d-flex">
+         class="row d-flex">
         <app-period-tile *ngFor="let period of periods"
                          (select)="onPeriodSelected($event)"
                          [selected]="selectedPeriod && selectedPeriod.id == period.id"
@@ -8,25 +9,27 @@
         </app-period-tile>
     </div>
     <div *ngIf="selectedPeriod"
-         class="d-flex align-content-between">
-        <div>{{ selectedPeriod.id }}</div>
-        <div>
-            <mat-form-field>
-                <mat-label>{{ 'ACTION.action' | translate }}</mat-label>
-                <mat-select [(value)]="selectedAction">
-                    <mat-option *ngFor="let action of (crop.actions$ | async)"
-                                [value]="action">
-                        {{ action.name }}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+         class="row pt-3 align-items-center">
+        <div class="col-2 font-weight-bold">
+            {{ selectedPeriod.code | translate }}
         </div>
-        <button (click)="planAction(selectedPeriod.id, selectedAction)"
-                mat-mini-fab>
-            <mat-icon>
-                done
-            </mat-icon>
-        </button>
+        <mat-form-field class="col-5">
+            <mat-label>{{ 'ACTION.action' | translate }}</mat-label>
+            <mat-select [(value)]="selectedAction">
+                <mat-option *ngFor="let action of (crop.actions$ | async)"
+                            [value]="action">
+                    {{ action.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="col-3">
+            <button (click)="planAction(selectedPeriod.id, selectedAction)"
+                    mat-mini-fab>
+                <mat-icon>
+                    done
+                </mat-icon>
+            </button>
+        </div>
     </div>
     <div>
         <div *ngFor="let action of strategy.plannedActions; let i = index">
@@ -35,4 +38,4 @@
             </ng-container>
         </div>
     </div>
-</ng-container>
+</div>
