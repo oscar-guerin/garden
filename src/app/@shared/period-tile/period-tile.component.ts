@@ -12,6 +12,10 @@ import { Period } from '../../@core/models/period';
             background-color: #cccccc44;
             border: 1px white solid;
         }
+
+        :host:hover {
+            background-color: #71a97477
+        }
 	`]
 })
 export class PeriodTileComponent {
