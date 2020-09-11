@@ -2,7 +2,7 @@
     <div *ngIf="periods$ | async as periods"
          class="d-flex">
         <app-period-tile *ngFor="let period of periods"
-                         (selected)="onPeriodSelected($event)"
+                         (select)="onPeriodSelected($event)"
                          [period]="period">
         </app-period-tile>
     </div>
