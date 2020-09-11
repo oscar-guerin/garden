@@ -27,8 +27,8 @@ $custom-typography: mat-typography-config(
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$garden-front-primary: mat-palette($mat-light-green, 300, A100, A400);
-$garden-front-accent: mat-palette($mat-green);
+$garden-front-primary: mat-palette($mat-light-green, 200);
+$garden-front-accent: mat-palette($mat-green, 600);
 
 // The warn palette is optional (defaults to red).
 $garden-front-warn: mat-palette($mat-red);
