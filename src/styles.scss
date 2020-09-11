@@ -63,6 +63,20 @@ body {
   font: inherit !important;
 }
 
+.mat-expansion-panel {
+  box-shadow: none !important;
+  border: 1px lightgray solid;
+}
+
+.mat-expansion-panel-header {
+  transition: background-color 0.2s ease-out !important;
+}
+
+.mat-expansion-panel-header:hover {
+  background-color: #CCCCCC22 !important;
+  cursor: pointer;
+}
+
 mat-row {
   transition: background-color 0.2s ease-out;
 }
