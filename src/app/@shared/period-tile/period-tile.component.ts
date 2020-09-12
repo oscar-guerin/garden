@@ -7,10 +7,11 @@ import { Period } from '../../@core/models/period';
 	styles: [`
         :host {
             display: block;
-            width: 30px;
-            height: 15px;
+            width: 32px;
+            height: 16px;
             background-color: #cccccc44;
             border: 1px white solid;
+            cursor: pointer;
         }
 
         :host:hover {
@@ -29,6 +30,9 @@ export class PeriodTileComponent {
 	@Input()
 	@HostBinding('class.tile-selected')
 	public selected: boolean;
+	@Input()
+	@HostBinding('style.background-color')
+	public color: string;
 
 	@Output()
 	public select: EventEmitter<Period> = new EventEmitter<Period>();

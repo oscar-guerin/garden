@@ -31,4 +31,19 @@ export class Action {
 	public merge(...actions: Partial<Action>[]): Action {
 		return merge(this, ...actions);
 	}
+
+	public getColorCode(): string {
+		switch (this.actionType) {
+			case ActionType.SOWING:
+				return '#cbe296';
+			case ActionType.PLANTING:
+				return '#eae39b';
+			case ActionType.CARE:
+				return '#f3d497';
+			case ActionType.HARVEST:
+				return '#d9a38e';
+			default:
+				return undefined;
+		}
+	}
 }
