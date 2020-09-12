@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ 'SHARED.pickImage' | translate }}</h1>
+<form [formGroup]="form"
+      class="container">
+
+</form>
+<div class="d-flex justify-content-end"
+     mat-dialog-actions>
+    <button (click)="submit()"
+            color="accent"
+            mat-flat-button>
+        {{ 'SHARED.save' | translate }}
+    </button>
+</div>
