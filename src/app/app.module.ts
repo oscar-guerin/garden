@@ -12,6 +12,8 @@ import * as firebase from 'firebase/app';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 	return new TranslateHttpLoader(http);
@@ -25,16 +27,16 @@ const firebaseApp: () => firebase.firestore.Firestore = () =>
 		AppComponent,
 	],
 	imports: [
-		BrowserModule,
 		AppRoutingModule,
+		BrowserModule,
+		BrowserAnimationsModule,
+		HttpClientModule,
 		NgxRepositoryModule.forRoot(),
 		NgxFirebaseRepositoryModule.forRoot(
 			firebaseApp()
 		),
-		CoreModule,
-		SharedModule,
-		BrowserAnimationsModule,
-		HttpClientModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFireStorageModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
@@ -42,7 +44,9 @@ const firebaseApp: () => firebase.firestore.Firestore = () =>
 				deps: [HttpClient]
 			},
 			defaultLanguage: 'fr'
-		})
+		}),
+		CoreModule,
+		SharedModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
