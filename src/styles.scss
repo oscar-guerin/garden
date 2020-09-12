@@ -31,7 +31,7 @@ $garden-front-primary: mat-palette($mat-light-green, 200);
 $garden-front-accent: mat-palette($mat-green, 600);
 
 // The warn palette is optional (defaults to red).
-$garden-front-warn: mat-palette($mat-red);
+$garden-front-warn: mat-palette($mat-red, A200);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".

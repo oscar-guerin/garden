@@ -10,7 +10,7 @@
     </div>
     <div *ngIf="selectedPeriod"
          class="row pt-3 align-items-center">
-        <div class="col-2 font-weight-bold">
+        <div class="col-3 font-weight-bold">
             {{ selectedPeriod.code | translate }}
         </div>
         <mat-form-field class="col-5">
@@ -33,9 +33,18 @@
     </div>
     <ng-container *ngFor="let action of strategy.plannedActions; let i = index">
         <div *ngIf="action && action.id"
-             class="row pt-3">
-            <div class="col-2 font-weight-bold">{{ periods[i].code | translate }}</div>
+             class="row pt-3 align-items-center">
+            <div class="col-3 font-weight-bold">{{ periods[i].code | translate }}</div>
             <div class="col-5">{{ action.name }}</div>
+            <div class="col-3 py-3">
+                <button (click)="removeAction(i)"
+                        color="warn"
+                        mat-mini-fab>
+                    <mat-icon>
+                        delete
+                    </mat-icon>
+                </button>
+            </div>
         </div>
     </ng-container>
 </div>
