@@ -1,7 +1,7 @@
 <div [formGroup]="form"
+     *ngIf="periods$ | async as periods"
      class="container">
-    <div *ngIf="periods$ | async as periods"
-         class="row d-flex">
+    <div class="row d-flex">
         <app-period-tile *ngFor="let period of periods"
                          (select)="onPeriodSelected($event)"
                          [selected]="selectedPeriod && selectedPeriod.id == period.id"
@@ -31,11 +31,11 @@
             </button>
         </div>
     </div>
-    <div>
-        <div *ngFor="let action of strategy.plannedActions; let i = index">
-            <ng-container *ngIf="action && action.id">
-                {{ i }} - {{ action.id }} {{ action.name }}
-            </ng-container>
+    <ng-container *ngFor="let action of strategy.plannedActions; let i = index">
+        <div *ngIf="action && action.id"
+             class="row pt-3">
+            <div class="col-2 font-weight-bold">{{ periods[i].code | translate }}</div>
+            <div class="col-5">{{ action.name }}</div>
         </div>
-    </div>
+    </ng-container>
 </div>
