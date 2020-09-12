@@ -91,10 +91,10 @@ mat-row:hover {
   border: 1px $border-color solid;
 }
 
-mat-row .mat-menu-item, .mat-option, .mat-expansion-panel-header {
+.mat-row .mat-menu-item, .mat-option, .mat-expansion-panel-header {
   transition: background-color 0.2s ease-out !important;
 }
 
-mat-row:hover, .mat-menu-item:hover, .mat-option:hover, .mat-expansion-panel-header:hover {
+.mat-row:hover, .mat-menu-item:hover, .mat-option:hover, .mat-expansion-panel-header:hover {
   background-color: $hover-color !important;
 }
