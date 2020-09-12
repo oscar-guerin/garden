@@ -29,6 +29,7 @@
     "@witty-services/ngx-repository": "^2.0.4-rc.2",
     "@witty-services/rxjs-common": "^1.0.7-rc.0",
     "firebase": "^7.13.1",
+    "ics": "^2.24.0",
     "lodash": "^4.17.19",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
