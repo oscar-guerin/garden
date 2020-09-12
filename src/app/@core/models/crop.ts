@@ -19,6 +19,9 @@ export class Crop {
 	@Column()
 	public name: string;
 
+	@Column()
+	public imageUrl: string;
+
 	@SubCollection({
 		resourceType: () => Action,
 		params: (crop: Crop) => new ActionQuery({ cropId: crop.id }),
