@@ -1,6 +1,7 @@
 <ng-container *ngIf="periods$ | async as periods"
               [formGroup]="form">
-    <div class="row d-flex py-2">
+    <h4 class="pt-2">{{ 'STRATEGY.calendar' | translate }}</h4>
+    <div class="row d-flex pb-2">
         <app-period-tile *ngFor="let period of periods"
                          (select)="onPeriodSelected($event)"
                          [selected]="selectedPeriod && selectedPeriod.id == period.id"

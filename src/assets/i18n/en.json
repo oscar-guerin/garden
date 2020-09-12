@@ -29,6 +29,7 @@
     "strategy": "Strategy",
     "strategies": "Strategies",
     "name": "Name",
+    "calendar": "Calendar",
     "edit": "Edit strategy",
     "delete": "Delete strategy"
   },
