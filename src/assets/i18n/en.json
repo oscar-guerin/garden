@@ -28,6 +28,7 @@
   "STRATEGY": {
     "strategy": "Strategy",
     "strategies": "Strategies",
+    "name": "Name",
     "edit": "Edit strategy",
     "delete": "Delete strategy"
   },

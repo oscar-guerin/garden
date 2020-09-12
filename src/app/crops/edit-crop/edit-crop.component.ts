@@ -7,11 +7,11 @@ import { CropService } from '../../@core/services/crop.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ifNotNull, ifNull } from '@witty-services/rxjs-common';
 import { ObservableDestroy } from '@witty-services/ngx-common';
-import { MatDialog } from '@angular/material/dialog';
 import { EditActionComponent } from '../../@shared/edit-action/edit-action.component';
 import { Action } from '../../@core/models/action';
 import { Strategy } from '../../@core/models/strategy';
 import { EditStrategyComponent } from '../../@shared/edit-strategy/edit-strategy.component';
+import { DialogService } from '../../@core/services/dialog.service';
 
 @Component({
 	selector: 'app-edit-crop',
@@ -24,7 +24,6 @@ export class EditCropComponent extends ObservableDestroy {
 
 	public constructor(private readonly route: ActivatedRoute,
 					   private readonly router: Router,
-					   private readonly dialog: MatDialog,
 					   private readonly cropService: CropService,
 					   private readonly fb: FormBuilder) {
 		super();
@@ -57,13 +56,13 @@ export class EditCropComponent extends ObservableDestroy {
 	public openActionDialog(action: Action = new Action()): void {
 		this.crop$.pipe(
 			first()
-		).subscribe((crop: Crop) => this.dialog.open(EditActionComponent, { data: { action, crop }, width: '40vw' }))
+		).subscribe((crop: Crop) => DialogService.getInstance().open(EditActionComponent, { action, crop }))
 	}
 
 	public openStrategyDialog(strategy: Strategy = new Strategy()): void {
 		this.crop$.pipe(
 			first()
-		).subscribe((crop: Crop) => this.dialog.open(EditStrategyComponent, { data: { strategy, crop } }))
+		).subscribe((crop: Crop) => DialogService.getInstance().open(EditStrategyComponent, { strategy, crop }))
 	}
 
 	public submit(): void {

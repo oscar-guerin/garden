@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { LanguageSwitcherComponent } from './language-switcher/language-switcher.component';
 import { EditActionComponent } from './edit-action/edit-action.component';
 import { DetailActionComponent } from './detail-action/detail-action.component';
-import { StrategyControlComponent } from './form-controls/strategy-control/strategy-control.component';
+import { StrategyPlannerControlComponent } from './form-controls/strategy-control/strategy-planner-control.component';
 import { PeriodTileComponent } from './period-tile/period-tile.component';
 import { EditStrategyComponent } from './edit-strategy/edit-strategy.component';
 import { DetailStrategyComponent } from './detail-strategy/detail-strategy.component';
@@ -22,7 +22,7 @@ const EXPORTABLE_COMPONENTS: any = [
 ];
 
 const FORM_CONTROLS: any = [
-	StrategyControlComponent
+	StrategyPlannerControlComponent
 ]
 
 @NgModule({

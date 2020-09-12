@@ -10,17 +10,17 @@ import { Crop } from '../../../@core/models/crop';
 import { Action } from '../../../@core/models/action';
 
 @Component({
-	selector: 'app-strategy-control',
-	templateUrl: './strategy-control.component.html',
+	selector: 'app-strategy-planner-control',
+	templateUrl: './strategy-planner-control.component.html',
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => StrategyControlComponent),
+			useExisting: forwardRef(() => StrategyPlannerControlComponent),
 			multi: true
 		},
 	]
 })
-export class StrategyControlComponent extends AbstractPrimitiveControl<Strategy> {
+export class StrategyPlannerControlComponent extends AbstractPrimitiveControl<Strategy> {
 
 	@Input()
 	public crop: Crop;

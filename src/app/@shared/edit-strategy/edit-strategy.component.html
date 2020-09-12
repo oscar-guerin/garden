@@ -1,9 +1,17 @@
 <h1 mat-dialog-title>{{ 'STRATEGY.strategy' | translate }}</h1>
 <form [formGroup]="form"
-      mat-dialog-content>
-    <app-strategy-control [crop]="data.crop"
-                          [strategy]="data.strategy"
-                          formControlName="strategy"></app-strategy-control>
+      class="container">
+    <div class="row">
+        <mat-form-field>
+            <mat-label>{{ 'STRATEGY.name' | translate }}</mat-label>
+            <input aria-label=""
+                   formControlName="name"
+                   matInput>
+        </mat-form-field>
+    </div>
+    <app-strategy-planner-control [crop]="data.crop"
+                                  [strategy]="data.strategy"
+                                  formControlName="strategy"></app-strategy-planner-control>
 </form>
 <div class="d-flex justify-content-end"
      mat-dialog-actions>
