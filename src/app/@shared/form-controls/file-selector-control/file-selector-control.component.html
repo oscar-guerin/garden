@@ -1,7 +1,6 @@
-<ng-container [formGroup]="form">
+<ng-container>
     <input #fileInput
            (change)="onFileSelected($event)"
-           formControlName="{{ fieldName }}"
            hidden
            type="file">
     <div class="d-flex">
