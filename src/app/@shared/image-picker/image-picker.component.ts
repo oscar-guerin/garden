@@ -13,4 +13,7 @@ export class ImagePickerComponent {
 	public constructor(private readonly fb: FormBuilder,
 					   private readonly storageService: StorageService) {
 	}
+
+	public submit(): void {
+	}
 }
