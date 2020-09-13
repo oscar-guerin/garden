@@ -15,7 +15,7 @@ import { ErrorCode } from '../../../@core/enumerations/error-code';
 		},
 	]
 })
-export class FileSelectorControlComponent extends AbstractPrimitiveControl<File> {
+export class FileSelectorControlComponent extends AbstractPrimitiveControl<Event> {
 
 	@Input()
 	public maxSize: number = 5242880;
@@ -35,7 +35,7 @@ export class FileSelectorControlComponent extends AbstractPrimitiveControl<File>
 			this.snackbarService.error(ErrorCode.FILE_TOO_BIG);
 		} else {
 			this.selectedFile = event.target.files[0];
-			this.field.setValue(this.selectedFile);
+			this.field.setValue(event);
 		}
 	}
 }

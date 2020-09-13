@@ -14,6 +14,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { FileSelectorControlComponent } from './form-controls/file-selector-control/file-selector-control.component';
 import { ImagePickerComponent } from './image-picker/image-picker.component';
 import { ImageControlComponent } from './form-controls/image-control/image-control.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -35,6 +36,7 @@ const FORM_CONTROLS: any = [
 	imports: [
 		CoreModule,
 		RouterModule,
+		ImageCropperModule,
 		_MatMenuDirectivesModule
 	],
 	exports: [

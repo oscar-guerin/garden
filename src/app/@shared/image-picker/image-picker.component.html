@@ -2,8 +2,15 @@
 <form [formGroup]="form"
       class="container">
     <app-file-selector-control [imagesOnly]="true"
+                               class="row pb-3"
                                formControlName="file">
     </app-file-selector-control>
+    <div class="row pb-3 d-flex justify-content-center">
+        <image-cropper (imageCropped)="onImageCropped($event)"
+                       [autoCrop]="true"
+                       [imageChangedEvent]="fileEvent">
+        </image-cropper>
+    </div>
 </form>
 <div class="d-flex justify-content-end"
      mat-dialog-actions>
