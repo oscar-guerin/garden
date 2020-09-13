@@ -1,1 +1,17 @@
-<input type="file">
+<ng-container [formGroup]="form">
+    <input #fileInput
+           (change)="onFileSelected($event)"
+           formControlName="{{ fieldName }}"
+           hidden
+           type="file">
+    <div class="d-flex">
+        <button (click)="fileInput.click()"
+                class="mr-4"
+                mat-stroked-button>
+            {{ 'SHARED.chooseFile' | translate }}
+        </button>
+        <div *ngIf="selectedFile">
+            {{ selectedFile.name }}
+        </div>
+    </div>
+</ng-container>

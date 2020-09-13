@@ -6,7 +6,8 @@
     "language": "Langue",
     "yes": "Oui",
     "no": "Non",
-    "pickImage": "Choisissez une image"
+    "pickImage": "Choisissez une image",
+    "chooseFile": "Choisir un fichier"
   },
   "CROP": {
     "crop": "Culture",

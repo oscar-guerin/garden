@@ -6,7 +6,8 @@
     "language": "Language",
     "yes": "Yes",
     "no": "No",
-    "pickImage": "Pick an image"
+    "pickImage": "Pick an image",
+    "chooseFile": "Choose a file"
   },
   "CROP": {
     "crop": "Crop",
