@@ -9,13 +9,15 @@ import { StrategyService } from './services/strategy.service';
 import { PeriodService } from './services/period.service';
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 import { DialogService } from './services/dialog.service';
+import { StorageService } from './services/storage.service';
 
 const SERVICES: any = [
 	CropService,
 	ActionService,
 	StrategyService,
 	PeriodService,
-	DialogService
+	DialogService,
+	StorageService
 ];
 
 const PIPES: any = [

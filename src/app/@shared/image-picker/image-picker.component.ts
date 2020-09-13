@@ -12,6 +12,9 @@ export class ImagePickerComponent {
 
 	public constructor(private readonly fb: FormBuilder,
 					   private readonly storageService: StorageService) {
+		this.form = this.fb.group({
+			file: []
+		})
 	}
 
 	public submit(): void {

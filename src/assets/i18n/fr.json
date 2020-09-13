@@ -5,7 +5,8 @@
     "save": "Enregistrer",
     "language": "Langue",
     "yes": "Oui",
-    "no": "Non"
+    "no": "Non",
+    "pickImage": "Choisissez une image"
   },
   "CROP": {
     "crop": "Culture",

@@ -18,7 +18,7 @@ export class DialogService {
 		return this.instance;
 	}
 
-	public open(component: ComponentType<unknown>, data: any): void {
+	public open(component: ComponentType<unknown>, data: any = {}): void {
 		this.matDialog.open(component, { data, minWidth: '40vw' });
 	}
 
