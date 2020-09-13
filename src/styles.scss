@@ -50,8 +50,9 @@ $garden-front-theme: mat-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-$hover-color: #CCCCCC22;
-$border-color: lightgray;
+$hover-color: #cccccc22;
+$border-color: #d3d3d3;
+$error-color: #ff5252;
 
 html, body {
   height: 100%;
@@ -97,4 +98,9 @@ mat-row:hover {
 
 .mat-row:hover, .mat-menu-item:hover, .mat-option:hover, .mat-expansion-panel-header:hover {
   background-color: $hover-color !important;
+}
+
+.snackbar-error {
+  background-color: $error-color;
+  color: white;
 }

@@ -39,6 +39,10 @@
     "confirm": "Confirmation",
     "delete": "Are you sure you want to delete this element ?"
   },
+  "ERROR": {
+    "fileTooBig": "The chosen file is too big",
+    "fileNotImage": "The chosen file has an invalid type, please chose an image file"
+  },
   "SOWING": "Sowing",
   "PLANTING": "Planting",
   "CARE": "Care",

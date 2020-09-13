@@ -1,6 +1,8 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { AbstractPrimitiveControl } from '../abstract-primitive-control';
+import { SnackbarService } from '../../../@core/services/snackbar.service';
+import { ErrorCode } from '../../../@core/enumerations/error-code';
 
 @Component({
 	selector: 'app-file-selector-control',
@@ -16,26 +18,23 @@ import { AbstractPrimitiveControl } from '../abstract-primitive-control';
 export class FileSelectorControlComponent extends AbstractPrimitiveControl<string> {
 
 	@Input()
-	public maxLength: number = 5242880;
+	public maxSize: number = 5242880;
 	@Input()
 	public imagesOnly: boolean = false;
 
 	public selectedFile: File;
 
-	public constructor() {
+	public constructor(private readonly snackbarService: SnackbarService) {
 		super('file', '');
 	}
 
 	public onFileSelected(event: any): void {
 		if (this.imagesOnly && !event.target.files[0].type.startsWith('image')) {
-			// TODO toaster
-			return;
+			this.snackbarService.error(ErrorCode.FILE_NOT_IMAGE);
+		} else if (event.target.files[0].size > this.maxSize) {
+			this.snackbarService.error(ErrorCode.FILE_TOO_BIG);
+		} else {
+			this.selectedFile = event.target.files[0];
 		}
-		if (event.target.files[0].size > this.maxLength) {
-			// TODO toaster
-			return;
-		}
-
-		this.selectedFile = event.target.files[0];
 	}
 }

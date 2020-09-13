@@ -39,6 +39,10 @@
     "confirm": "Confirmation",
     "delete": "Êtes-vous sur de vouloir supprimer cet élément ?"
   },
+  "ERROR": {
+    "fileTooBig": "Le fichier choisi est trop volumineux",
+    "fileNotImage": "Le type du fichier choisi est invalide, veuillez choisir une image"
+  },
   "SOWING": "Semis",
   "PLANTING": "Plantation",
   "CARE": "Entretien",

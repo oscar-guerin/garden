@@ -1,7 +1,8 @@
 <h1 mat-dialog-title>{{ 'SHARED.pickImage' | translate }}</h1>
 <form [formGroup]="form"
       class="container">
-    <app-file-selector-control formControlName="file">
+    <app-file-selector-control [imagesOnly]="true"
+                               formControlName="file">
     </app-file-selector-control>
 </form>
 <div class="d-flex justify-content-end"
