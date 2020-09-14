@@ -3,8 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { StorageService } from '../../@core/services/storage.service';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ObservableDestroy } from '@witty-services/ngx-common';
-import { switchMap, takeUntil } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { from, Observable, Subject } from 'rxjs';
 
 interface ImageUploaderDialogData {
@@ -14,28 +13,26 @@ interface ImageUploaderDialogData {
 @Component({
 	templateUrl: './image-uploader.component.html'
 })
-export class ImageUploaderComponent extends ObservableDestroy {
+export class ImageUploaderComponent {
 
 	public readonly downloadUrl$: Observable<string>;
 
 	public form: FormGroup;
 	private croppedImage: string;
-	private submit$: Subject<string> = new Subject<string>();
+	private submittedImage$: Subject<string> = new Subject<string>();
 
 	public constructor(@Inject(MAT_DIALOG_DATA) private readonly data: ImageUploaderDialogData,
 					   private readonly fb: FormBuilder,
 					   private readonly storageService: StorageService) {
-		super();
 		this.form = this.fb.group({
 			file: []
 		});
 
-		this.downloadUrl$ = this.submit$.pipe(
+		this.downloadUrl$ = this.submittedImage$.pipe(
 			switchMap((submittedImage: string) => from(fetch(submittedImage))),
 			switchMap((res: Response) => from(res.blob())),
 			switchMap((blob: Blob) => this.storageService.upload(blob, this.data.path)),
-			takeUntil(this.onDestroy$),
-		)
+		);
 	}
 
 	public get fileEvent(): Event {
@@ -48,7 +45,7 @@ export class ImageUploaderComponent extends ObservableDestroy {
 
 	public submit(): void {
 		if (this.croppedImage != null && this.data.path != null) {
-			this.submit$.next(this.croppedImage);
+			this.submittedImage$.next(this.croppedImage);
 		}
 	}
 }

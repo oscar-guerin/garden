@@ -43,7 +43,8 @@ export class EditCropComponent extends ObservableDestroy {
 		this.crop$ = merge(editCrop$, createCrop$);
 
 		this.form = this.fb.group({
-			name: ['']
+			name: [],
+			imageUrl: []
 		});
 
 		this.crop$.pipe(
