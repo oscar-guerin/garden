@@ -16,7 +16,7 @@ export class StorageService {
 
 	public upload(file: any, path: string): Observable<UploadStatus> {
 		const fileRef: AngularFireStorageReference = this.storage.ref(path);
-		const task: AngularFireUploadTask = this.storage.upload(path, file);
+		const task: AngularFireUploadTask = fileRef.put(file);
 
 		const percentageStatus$: Observable<UploadStatus> = task.percentageChanges().pipe(
 			map((percentage: number) => ({ progress: percentage }))

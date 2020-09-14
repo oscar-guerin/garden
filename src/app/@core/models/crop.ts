@@ -43,4 +43,8 @@ export class Crop {
 	public merge(crop: Crop): Crop {
 		return merge(this, crop);
 	}
+
+	public getImageReferencePath(): string {
+		return `/crops/${this.id}`;
+	}
 }

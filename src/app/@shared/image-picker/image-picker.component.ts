@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StorageService } from '../../@core/services/storage.service';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+interface ImagePickerDialogData {
+	path: string;
+}
 
 @Component({
 	selector: 'app-image-picker',
@@ -10,8 +15,10 @@ import { ImageCroppedEvent } from 'ngx-image-cropper';
 export class ImagePickerComponent {
 
 	public form: FormGroup;
+	private croppedImage: string;
 
-	public constructor(private readonly fb: FormBuilder,
+	public constructor(@Inject(MAT_DIALOG_DATA) private readonly data: ImagePickerDialogData,
+					   private readonly fb: FormBuilder,
 					   private readonly storageService: StorageService) {
 		this.form = this.fb.group({
 			file: []
@@ -23,9 +30,15 @@ export class ImagePickerComponent {
 	}
 
 	public onImageCropped(event: ImageCroppedEvent): void {
-		console.log(event);
+		this.croppedImage = event.base64;
 	}
 
 	public submit(): void {
+		if (this.croppedImage != null && this.data.path != null) {
+			fetch(this.croppedImage)
+				.then((res: Response) => res.blob())
+				.then((blob: Blob) => this.storageService.upload(blob, this.data.path).subscribe(console.log)
+				);
+		}
 	}
 }
