@@ -2,7 +2,8 @@ import { Component, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { AbstractPrimitiveControl } from '../abstract-primitive-control';
 import { DialogService } from '../../../@core/services/dialog.service';
-import { ImagePickerComponent } from '../../image-picker/image-picker.component';
+import { ImageUploaderComponent } from '../../image-uploader/image-uploader.component';
+import { first } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-image-control',
@@ -30,6 +31,11 @@ export class ImageControlComponent extends AbstractPrimitiveControl<string> {
 	}
 
 	public openImagePickerDialog(): void {
-		DialogService.getInstance().open(ImagePickerComponent, { path: this.path });
+		const content: ImageUploaderComponent = DialogService.getInstance().open(ImageUploaderComponent, { path: this.path });
+		content.downloadUrl$.pipe(
+			first()
+		).subscribe(
+			(downloadUrl: string) => this.field.setValue(downloadUrl)
+		);
 	}
 }

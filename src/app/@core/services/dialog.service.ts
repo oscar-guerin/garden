@@ -18,8 +18,8 @@ export class DialogService {
 		return this.instance;
 	}
 
-	public open(component: ComponentType<unknown>, data: any = {}): void {
-		this.matDialog.open(component, { data, minWidth: '40vw' });
+	public open(component: ComponentType<unknown>, data: any = {}): any {
+		return this.matDialog.open(component, { data, minWidth: '40vw' }).componentInstance;
 	}
 
 	public confirm(textCode: ConfirmTextCode): Observable<boolean> {

@@ -12,7 +12,7 @@ import { DetailStrategyComponent } from './detail-strategy/detail-strategy.compo
 import { _MatMenuDirectivesModule } from '@angular/material/menu';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { FileSelectorControlComponent } from './form-controls/file-selector-control/file-selector-control.component';
-import { ImagePickerComponent } from './image-picker/image-picker.component';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { ImageControlComponent } from './form-controls/image-control/image-control.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 
@@ -23,7 +23,7 @@ const EXPORTABLE_COMPONENTS: any = [
 	EditActionComponent,
 	EditStrategyComponent,
 	ConfirmComponent,
-	ImagePickerComponent
+	ImageUploaderComponent
 ];
 
 const FORM_CONTROLS: any = [
