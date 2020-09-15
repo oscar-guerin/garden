@@ -3,7 +3,7 @@
     <form [formGroup]="form"
           class="container px-5">
         <h1 class="row">{{ crop.name }}</h1>
-        <app-image-control [uploadPath]="crop.getImageReferencePath()"
+        <app-image-control [uploadPath]="freshImageUploadPath$ | async"
                            formControlName="imageUrl"></app-image-control>
         <mat-form-field class="row">
             <mat-label>{{ 'CROP.name' | translate }}</mat-label>

@@ -44,7 +44,7 @@ export class Crop {
 		return merge(this, crop);
 	}
 
-	public getImageReferencePath(): string {
-		return `/crops/${this.id}`;
+	public freshImageUploadPath(): string {
+		return `/crops/${this.id}/image_${Date.now()}`;
 	}
 }

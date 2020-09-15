@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { merge, Observable, of } from 'rxjs';
 import { Crop } from '../../@core/models/crop';
-import { first, map, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
+import { filter, first, map, startWith, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
 import { CropService } from '../../@core/services/crop.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ifNotNull, ifNull } from '@witty-services/rxjs-common';
@@ -21,12 +21,17 @@ export class EditCropComponent extends ObservableDestroy {
 
 	public crop$: Observable<Crop>;
 	public form: FormGroup;
+	public freshImageUploadPath$: Observable<string>;
 
 	public constructor(private readonly route: ActivatedRoute,
 					   private readonly router: Router,
 					   private readonly cropService: CropService,
 					   private readonly fb: FormBuilder) {
 		super();
+		this.form = this.fb.group({
+			name: [],
+			imageUrl: []
+		});
 
 		const editCrop$: Observable<Crop> = route.paramMap.pipe(
 			map((paramMap: ParamMap) => paramMap.get('id')),
@@ -42,15 +47,17 @@ export class EditCropComponent extends ObservableDestroy {
 
 		this.crop$ = merge(editCrop$, createCrop$);
 
-		this.form = this.fb.group({
-			name: [],
-			imageUrl: []
-		});
-
 		this.crop$.pipe(
 			takeUntil(this.onDestroy$)
 		).subscribe(
 			(crop: Crop) => this.form.patchValue(crop)
+		);
+
+		this.freshImageUploadPath$ = this.form.get('imageUrl').valueChanges.pipe(
+			startWith(''),
+			switchMapTo(this.crop$),
+			filter((crop: Crop) => !!crop.id),
+			map((crop: Crop) => crop.freshImageUploadPath()),
 		);
 	}
 

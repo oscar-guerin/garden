@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
-import { Observable } from 'rxjs';
+import { AngularFireStorage, AngularFireStorageReference } from '@angular/fire/storage';
+import { from, Observable } from 'rxjs';
+import { switchMapTo } from 'rxjs/operators';
 
 @Injectable()
 export class StorageService {
@@ -10,8 +11,9 @@ export class StorageService {
 
 	public upload(file: any, path: string): Observable<string> {
 		const fileRef: AngularFireStorageReference = this.storage.ref(path);
-		const task: AngularFireUploadTask = fileRef.put(file);
 
-		return fileRef.getDownloadURL();
+		return from(fileRef.put(file).then()).pipe(
+			switchMapTo(fileRef.getDownloadURL()),
+		);
 	}
 }
