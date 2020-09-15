@@ -47,7 +47,7 @@ export abstract class AbstractPrimitiveControl<T> implements ControlValueAccesso
 		if (value === null) {
 			this.field.reset();
 		} else {
-			this.field.setValue(value, { emitEvent: false });
+			this.field.setValue(value);
 		}
 	}
 

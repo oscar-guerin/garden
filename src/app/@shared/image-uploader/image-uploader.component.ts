@@ -16,9 +16,9 @@ interface ImageUploaderDialogData {
 export class ImageUploaderComponent {
 
 	public readonly downloadUrl$: Observable<string>;
+	public croppedImage: string;
 
 	public form: FormGroup;
-	private croppedImage: string;
 	private submittedImage$: Subject<string> = new Subject<string>();
 
 	public constructor(@Inject(MAT_DIALOG_DATA) private readonly data: ImageUploaderDialogData,
