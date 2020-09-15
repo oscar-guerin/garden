@@ -11,6 +11,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const MATERIAL_MODULES: any = [
 	MatToolbarModule,
@@ -24,7 +25,8 @@ const MATERIAL_MODULES: any = [
 	MatExpansionModule,
 	MatMenuModule,
 	MatTooltipModule,
-	MatSnackBarModule
+	MatSnackBarModule,
+	MatProgressSpinnerModule
 ]
 
 @NgModule({

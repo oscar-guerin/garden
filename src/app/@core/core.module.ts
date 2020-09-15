@@ -11,6 +11,8 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 import { DialogService } from './services/dialog.service';
 import { StorageService } from './services/storage.service';
 import { SnackbarService } from './services/snackbar.service';
+import { DynamicOverlay } from './dynamic-overlay.service';
+import { DynamicOverlayContainer } from './dynamic-overlay-container.service';
 
 const SERVICES: any = [
 	CropService,
@@ -44,7 +46,9 @@ const PIPES: any = [
 		...PIPES
 	],
 	providers: [
-		...SERVICES
+		...SERVICES,
+		DynamicOverlayContainer,
+		DynamicOverlay,
 	],
 })
 export class CoreModule {

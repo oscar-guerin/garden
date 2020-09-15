@@ -15,6 +15,8 @@ import { FileSelectorControlComponent } from './form-controls/file-selector-cont
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { ImageControlComponent } from './form-controls/image-control/image-control.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { ProgressSpinnerDirective } from './directives/progress-spinner.directive';
+import { ProgressSpinnerContainerComponent } from './progress-spinner-container/progress-spinner-container.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -30,7 +32,11 @@ const FORM_CONTROLS: any = [
 	StrategyPlannerControlComponent,
 	FileSelectorControlComponent,
 	ImageControlComponent
-]
+];
+
+const DIRECTIVES: any = [
+	ProgressSpinnerDirective
+];
 
 @NgModule({
 	imports: [
@@ -41,13 +47,16 @@ const FORM_CONTROLS: any = [
 	],
 	exports: [
 		...EXPORTABLE_COMPONENTS,
-		...FORM_CONTROLS
+		...FORM_CONTROLS,
+		...DIRECTIVES
 	],
 	declarations: [
 		...EXPORTABLE_COMPONENTS,
 		...FORM_CONTROLS,
+		...DIRECTIVES,
 		LanguageSwitcherComponent,
-		PeriodTileComponent
+		PeriodTileComponent,
+		ProgressSpinnerContainerComponent
 	],
 	providers: [],
 })
