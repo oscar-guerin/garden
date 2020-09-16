@@ -13,6 +13,7 @@
     "crop": "Culture",
     "crops": "Cultures",
     "name": "Nom",
+    "family": "Famille",
     "addAction": "Ajouter une action",
     "addStrategy": "Ajouter une stratégie"
   },

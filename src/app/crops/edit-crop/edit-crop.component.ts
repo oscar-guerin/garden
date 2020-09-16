@@ -12,6 +12,7 @@ import { Action } from '../../@core/models/action';
 import { Strategy } from '../../@core/models/strategy';
 import { EditStrategyComponent } from '../../@shared/edit-strategy/edit-strategy.component';
 import { DialogService } from '../../@core/services/dialog.service';
+import { Family } from '../../@core/enumerations/family';
 
 @Component({
 	selector: 'app-edit-crop',
@@ -22,6 +23,7 @@ export class EditCropComponent extends ObservableDestroy {
 	public crop$: Observable<Crop>;
 	public form: FormGroup;
 	public freshImageUploadPath$: Observable<string>;
+	public families: typeof Family = Family;
 
 	public constructor(private readonly route: ActivatedRoute,
 					   private readonly router: Router,
@@ -30,6 +32,7 @@ export class EditCropComponent extends ObservableDestroy {
 		super();
 		this.form = this.fb.group({
 			name: [],
+			family: [],
 			imageUrl: []
 		});
 

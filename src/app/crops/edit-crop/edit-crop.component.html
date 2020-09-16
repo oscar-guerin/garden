@@ -7,13 +7,27 @@
             <app-image-control [uploadPath]="freshImageUploadPath$ | async"
                                class="col-6"
                                formControlName="imageUrl"></app-image-control>
-            <mat-form-field class="col-6">
-                <mat-label>{{ 'CROP.name' | translate }}</mat-label>
-                <label>
-                    <input formControlName="name"
-                           matInput>
-                </label>
-            </mat-form-field>
+            <div class="col-6">
+                <div class="row">
+                    <mat-form-field>
+                        <mat-label>{{ 'CROP.name' | translate }}</mat-label>
+                        <input aria-label=""
+                               formControlName="name"
+                               matInput>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <mat-label>{{ 'CROP.family' | translate }}</mat-label>
+                        <mat-select formControlName="family">
+                            <mat-option *ngFor="let family of families | enumToArray"
+                                        [value]="family">
+                                {{ family | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
         </div>
         <div class="row d-flex justify-content-end">
             <button (click)="submit()"

@@ -13,6 +13,7 @@
     "crop": "Crop",
     "crops": "Crops",
     "name": "Name",
+    "family": "Family",
     "addAction": "Add action",
     "addStrategy": "Add strategy"
   },

@@ -6,6 +6,7 @@ import { ActionQuery } from '../queries/action.query';
 import { Observable } from 'rxjs';
 import { Strategy } from './strategy';
 import { StrategyQuery } from '../queries/strategy.query';
+import { Family } from '../enumerations/family';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops',
@@ -18,6 +19,9 @@ export class Crop {
 
 	@Column()
 	public name: string;
+
+	@Column()
+	public family: Family;
 
 	@Column()
 	public imageUrl: string;
