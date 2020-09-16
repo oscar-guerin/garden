@@ -8,6 +8,7 @@
         </app-file-selector-control>
         <div class="row pb-3 d-flex justify-content-center">
             <image-cropper (imageCropped)="onImageCropped($event)"
+                           style="max-height: 400px; max-width: 400px"
                            [autoCrop]="true"
                            [imageChangedEvent]="fileEvent">
             </image-cropper>
