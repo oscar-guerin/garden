@@ -70,5 +70,14 @@
   "NOVEMBER_BEGINNING": "Beggining of november",
   "NOVEMBER_END": "End of november",
   "DECEMBER_BEGINNING": "Beggining of december",
-  "DECEMBER_END": "End of december"
+  "DECEMBER_END": "End of december",
+  "SOLANACEAE": "Solanaceae",
+  "CUCURBITACEAE": "Cucurbitaceae",
+  "BRASSICACEAE": "Brassicaceae",
+  "FABACEAE": "Fabaceae",
+  "POACEAE": "Poaceae",
+  "APIACEAE": "Apiaceae",
+  "LILIACEAE": "Liliaceae",
+  "ASTERACEAE": "Asteraceae",
+  "CHENOPODIACEAE": "Chenopodiaceae"
 }
