@@ -1,35 +1,43 @@
 <div *ngIf="crop$ | async as crop"
-     class="container mt-3">
-    <div class="row d-flex justify-content-between">
-        <h1>{{ crop.name }}</h1>
-        <div>
-            <button class="mr-2"
-                    mat-stroked-button
-                    routerLink="/crops/list">
-                {{ 'SHARED.backToList' | translate }}
-            </button>
-            <button color="accent"
-                    mat-flat-button
-                    routerLink="/crops/edit/{{crop.id}}">
-                {{ 'SHARED.edit' | translate }}
-            </button>
+     class="container-fluid h-75 mt-3">
+    <div class="row h-100">
+        <div class="col-3 h-100 border-right d-flex flex-column align-items-center">
+            <div class="row">
+                <img [src]="crop.imageUrl"
+                     alt="Crop avatar"
+                     class="border-radius-50"
+                     height="200"
+                     width="200"/>
+            </div>
+            <h1 class="row">{{ crop.name }}</h1>
+            <div class="row">
+                <strong class="pr-2">{{ 'CROP.family' | translate }}</strong>
+                <span>{{ crop.family | translate }}</span>
+            </div>
         </div>
-    </div>
-    <div *ngIf="crop.actions$ | async as actions"
-         class="row">
-        <div *ngFor="let action of actions">
-            {{ action.name }}
-            <div *ngFor="let step of action.steps">
-                {{ step }}
+        <div class="col-9 px-5">
+            <div class="row d-flex justify-content-end">
+                <button class="mr-2"
+                        mat-stroked-button
+                        routerLink="/crops/list">
+                    {{ 'SHARED.backToList' | translate }}
+                </button>
+                <button color="accent"
+                        mat-flat-button
+                        routerLink="/crops/edit/{{crop.id}}">
+                    {{ 'SHARED.edit' | translate }}
+                </button>
+            </div>
+            <h2 class="row">{{ 'STRATEGY.strategies' | translate }}</h2>
+            <div *ngIf="crop.strategies$ | async as strategies"
+                 class="row">
+                <app-detail-strategy *ngFor="let strategy of strategies"
+                                     [crop]="crop"
+                                     [strategy]="strategy">
+                </app-detail-strategy>
             </div>
         </div>
     </div>
-    <div *ngIf="crop.strategies$ | async as strategies"
-         class="row">
-        <app-detail-strategy *ngFor="let strategy of strategies"
-                             [crop]="crop"
-                             [strategy]="strategy">
-        </app-detail-strategy>
-    </div>
 </div>
+
 
