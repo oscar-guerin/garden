@@ -14,6 +14,7 @@
     "crops": "Crops",
     "name": "Name",
     "family": "Family",
+    "new": "Create a new crop",
     "addAction": "Add action",
     "addStrategy": "Add strategy"
   },

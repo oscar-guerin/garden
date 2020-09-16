@@ -14,6 +14,7 @@
     "crops": "Cultures",
     "name": "Nom",
     "family": "Famille",
+    "new": "Nouvelle culture",
     "addAction": "Ajouter une action",
     "addStrategy": "Ajouter une stratégie"
   },
