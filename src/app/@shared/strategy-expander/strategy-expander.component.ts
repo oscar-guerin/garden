@@ -7,15 +7,15 @@ import { switchMap } from 'rxjs/operators';
 import { StrategyService } from '../../@core/services/strategy.service';
 
 @Component({
-	selector: 'app-detail-strategy',
-	templateUrl: './detail-strategy.component.html',
+	selector: 'app-strategy-expander',
+	templateUrl: './strategy-expander.component.html',
 	styles: [`
         :host {
             width: 100%;
         }
 	`]
 })
-export class DetailStrategyComponent {
+export class StrategyExpanderComponent {
 
 	@Input()
 	public strategy: Strategy;

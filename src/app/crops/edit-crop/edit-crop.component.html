@@ -43,9 +43,9 @@
         <div class="col-12">
             <h2 class="row">{{ 'ACTION.actions' | translate }}</h2>
             <mat-accordion class="row mb-2">
-                <app-detail-action *ngFor="let action of (crop.actions$ | async)"
-                                   (edit$)="openActionDialog(action)"
-                                   [action]="action"></app-detail-action>
+                <app-action-expander (edit$)="openActionDialog(action)"
+                                     *ngFor="let action of (crop.actions$ | async)"
+                                     [action]="action"></app-action-expander>
             </mat-accordion>
             <div class="row d-flex justify-content-end">
                 <button (click)="openActionDialog()"
@@ -58,9 +58,9 @@
         <div class="col-12">
             <h2 class="row">{{ 'STRATEGY.strategies' | translate }}</h2>
             <mat-accordion class="row mb-2">
-                <app-detail-strategy *ngFor="let strategy of (crop.strategies$ | async)"
-                                     (edit$)="openStrategyDialog(strategy)"
-                                     [strategy]="strategy"></app-detail-strategy>
+                <app-strategy-expander (edit$)="openStrategyDialog(strategy)"
+                                       *ngFor="let strategy of (crop.strategies$ | async)"
+                                       [strategy]="strategy"></app-strategy-expander>
             </mat-accordion>
             <div class="row d-flex justify-content-end">
                 <button (click)="openStrategyDialog()"

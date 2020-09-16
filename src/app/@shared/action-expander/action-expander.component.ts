@@ -7,15 +7,15 @@ import { switchMap } from 'rxjs/operators';
 import { ConfirmTextCode } from '../../@core/enumerations/confirm-text-code';
 
 @Component({
-	selector: 'app-detail-action',
-	templateUrl: './detail-action.component.html',
+	selector: 'app-action-expander',
+	templateUrl: './action-expander.component.html',
 	styles: [`
         :host {
             width: 100%;
         }
 	`]
 })
-export class DetailActionComponent {
+export class ActionExpanderComponent {
 
 	@Input()
 	public action: Action;

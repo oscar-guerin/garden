@@ -4,11 +4,11 @@ import { CoreModule } from '../@core/core.module';
 import { RouterModule } from '@angular/router';
 import { LanguageSwitcherComponent } from './language-switcher/language-switcher.component';
 import { EditActionComponent } from './edit-action/edit-action.component';
-import { DetailActionComponent } from './detail-action/detail-action.component';
+import { ActionExpanderComponent } from './action-expander/action-expander.component';
 import { StrategyPlannerControlComponent } from './form-controls/strategy-planner-control/strategy-planner-control.component';
 import { PeriodTileComponent } from './period-tile/period-tile.component';
 import { EditStrategyComponent } from './edit-strategy/edit-strategy.component';
-import { DetailStrategyComponent } from './detail-strategy/detail-strategy.component';
+import { StrategyExpanderComponent } from './strategy-expander/strategy-expander.component';
 import { _MatMenuDirectivesModule } from '@angular/material/menu';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { FileSelectorControlComponent } from './form-controls/file-selector-control/file-selector-control.component';
@@ -20,8 +20,8 @@ import { ProgressSpinnerContainerComponent } from './progress-spinner-container/
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
-	DetailActionComponent,
-	DetailStrategyComponent,
+	ActionExpanderComponent,
+	StrategyExpanderComponent,
 	EditActionComponent,
 	EditStrategyComponent,
 	ConfirmComponent,
