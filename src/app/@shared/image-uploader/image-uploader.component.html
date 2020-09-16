@@ -1,23 +1,25 @@
-<h1 mat-dialog-title>{{ 'SHARED.pickImage' | translate }}</h1>
-<form [formGroup]="form"
-      class="container">
-    <app-file-selector-control [imagesOnly]="true"
-                               class="row pb-3"
-                               formControlName="file">
-    </app-file-selector-control>
-    <div class="row pb-3 d-flex justify-content-center">
-        <image-cropper (imageCropped)="onImageCropped($event)"
-                       [autoCrop]="true"
-                       [imageChangedEvent]="fileEvent">
-        </image-cropper>
+<div [progressSpinner]="isLoading">
+    <h1 mat-dialog-title>{{ 'SHARED.pickImage' | translate }}</h1>
+    <form [formGroup]="form"
+          class="container">
+        <app-file-selector-control [imagesOnly]="true"
+                                   class="row pb-3"
+                                   formControlName="file">
+        </app-file-selector-control>
+        <div class="row pb-3 d-flex justify-content-center">
+            <image-cropper (imageCropped)="onImageCropped($event)"
+                           [autoCrop]="true"
+                           [imageChangedEvent]="fileEvent">
+            </image-cropper>
+        </div>
+    </form>
+    <div class="d-flex justify-content-end"
+         mat-dialog-actions>
+        <button (click)="submit()"
+                color="accent"
+                mat-dialog-close
+                mat-flat-button>
+            {{ 'SHARED.save' | translate }}
+        </button>
     </div>
-</form>
-<div class="d-flex justify-content-end"
-     mat-dialog-actions>
-    <button (click)="submit()"
-            color="accent"
-            mat-dialog-close
-            mat-flat-button>
-        {{ 'SHARED.save' | translate }}
-    </button>
 </div>

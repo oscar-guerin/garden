@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
         <mat-spinner diameter="40"></mat-spinner>
 	`,
 	styles: [`
-        ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
-            stroke: #29d;
-        }
+
 
 	`]
 })

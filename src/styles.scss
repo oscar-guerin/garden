@@ -53,6 +53,7 @@ $garden-front-theme: mat-light-theme((
 $hover-color: #cccccc22;
 $border-color: #d3d3d3;
 $error-color: #ff5252;
+$link-color: #2299dd;
 
 html, body {
   height: 100%;
@@ -108,4 +109,8 @@ mat-row:hover {
 .custom-backdrop-class {
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(1.05px);
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $link-color !important;
 }

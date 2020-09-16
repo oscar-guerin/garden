@@ -18,6 +18,7 @@ export class ImageUploaderComponent {
 	public readonly downloadUrl$: Observable<string>;
 
 	public form: FormGroup;
+	public isLoading: boolean = true;
 	private submittedImage$: Subject<string> = new Subject<string>();
 	private croppedImage: string;
 
