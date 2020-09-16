@@ -1,0 +1,10 @@
+<div *ngIf="periods$ | async as periods"
+     class="container">
+    <h3 class="row">{{ strategy.name }}</h3>
+    <div class="row d-flex">
+        <app-period-tile *ngFor="let period of periods"
+                         [color]="strategy.plannedActions[period.id].getColorCode()"
+                         [period]="period">
+        </app-period-tile>
+    </div>
+</div>

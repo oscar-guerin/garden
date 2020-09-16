@@ -24,5 +24,12 @@
             </div>
         </div>
     </div>
+    <div *ngIf="crop.strategies$ | async as strategies"
+         class="row">
+        <app-detail-strategy *ngFor="let strategy of strategies"
+                             [crop]="crop"
+                             [strategy]="strategy">
+        </app-detail-strategy>
+    </div>
 </div>
 
