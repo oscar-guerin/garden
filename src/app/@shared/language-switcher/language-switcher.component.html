@@ -3,7 +3,12 @@
     <mat-select [formControl]="languageControl">
         <mat-option *ngFor="let language of languages"
                     [value]="language.code">
-            {{ language.name }}
+            <div class="d-flex align-items-center">
+                <img [src]="'assets/' + language.code + '.png'"
+                     alt="Flag"
+                     class="mr-2">
+                <div>{{ language.name }}</div>
+            </div>
         </mat-option>
     </mat-select>
 </mat-form-field>

@@ -7,7 +7,10 @@
     "yes": "Oui",
     "no": "Non",
     "pickImage": "Choisissez une image",
-    "chooseFile": "Choisir un fichier"
+    "chooseFile": "Choisir un fichier",
+    "login": "Connexion",
+    "email": "Email",
+    "password": "Mot de passe"
   },
   "CROP": {
     "crop": "Culture",
