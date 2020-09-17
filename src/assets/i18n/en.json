@@ -51,7 +51,8 @@
   },
   "ERROR": {
     "fileTooBig": "The chosen file is too big",
-    "fileNotImage": "The chosen file has an invalid type, please chose an image file"
+    "fileNotImage": "The chosen file has an invalid type, please chose an image file",
+    "userNotFound": "Invalid credentials, user not found"
   },
   "SOWING": "Sowing",
   "PLANTING": "Planting",

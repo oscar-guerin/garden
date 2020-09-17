@@ -51,7 +51,8 @@
   },
   "ERROR": {
     "fileTooBig": "Le fichier choisi est trop volumineux",
-    "fileNotImage": "Le type du fichier choisi est invalide, veuillez choisir une image"
+    "fileNotImage": "Le type du fichier choisi est invalide, veuillez choisir une image",
+    "userNotFound": "Identifiants invalides, utilisateur non trouvé"
   },
   "SOWING": "Semis",
   "PLANTING": "Plantation",
