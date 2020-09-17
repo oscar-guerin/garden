@@ -23,4 +23,9 @@
 
 <mat-menu #menu>
     <app-language-switcher class="px-3"></app-language-switcher>
+    <button (click)="openMailAuthDialog()"
+            mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>{{ 'SHARED.openMailAuthDialog' | translate }}</span>
+    </button>
 </mat-menu>

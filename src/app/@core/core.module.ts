@@ -13,6 +13,7 @@ import { StorageService } from './services/storage.service';
 import { SnackbarService } from './services/snackbar.service';
 import { DynamicOverlay } from './dynamic-overlay.service';
 import { DynamicOverlayContainer } from './dynamic-overlay-container.service';
+import { AuthService } from './services/auth.service';
 
 const SERVICES: any = [
 	CropService,
@@ -21,7 +22,8 @@ const SERVICES: any = [
 	PeriodService,
 	DialogService,
 	StorageService,
-	SnackbarService
+	SnackbarService,
+	AuthService
 ];
 
 const PIPES: any = [
