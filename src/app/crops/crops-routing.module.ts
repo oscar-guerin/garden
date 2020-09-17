@@ -4,6 +4,7 @@ import { CropsComponent } from './crops.component';
 import { EditCropComponent } from './edit-crop/edit-crop.component';
 import { ListCropComponent } from './list-crop/list-crop.component';
 import { DetailCropComponent } from './detail-crop/detail-crop.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
 	{
@@ -20,11 +21,13 @@ const routes: Routes = [
 			},
 			{
 				path: 'edit/:id',
-				component: EditCropComponent
+				component: EditCropComponent,
+				canActivate: [AngularFireAuthGuard]
 			},
 			{
 				path: 'create',
-				component: EditCropComponent
+				component: EditCropComponent,
+				canActivate: [AngularFireAuthGuard]
 			},
 			{
 				path: 'list',
