@@ -8,10 +8,11 @@
     "no": "No",
     "pickImage": "Pick an image",
     "chooseFile": "Choose a file",
-    "login": "Login",
+    "login": "Sign in",
     "email": "Email",
     "password": "Password",
-    "loginExplanation": "By logging in, you gain writing privileges for the entire website. Therefore, an invitation is required to create an account."
+    "loginExplanation": "By logging in, you gain writing privileges for the entire website. Therefore, an invitation is required to create an account.",
+    "logout": "Sign out"
   },
   "FORM": {
     "requiredError": "This field is required",
