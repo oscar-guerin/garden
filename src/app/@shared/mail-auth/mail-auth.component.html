@@ -1,17 +1,17 @@
 <h1 mat-dialog-title>{{ 'SHARED.login' | translate }}</h1>
 <form [formGroup]="form"
       class="container-fluid">
-    <div class="row mb-3">{{ 'SHARED.loginExplanation' | translate }}</div>
-    <div class="row">
-        <mat-form-field>
+    <div class="row mb-4">{{ 'SHARED.loginExplanation' | translate }}</div>
+    <div class="row w-75">
+        <mat-form-field class="w-100">
             <mat-label>{{ 'SHARED.email' | translate }}</mat-label>
             <input aria-label=""
                    formControlName="email"
                    matInput>
         </mat-form-field>
     </div>
-    <div class="row">
-        <mat-form-field>
+    <div class="row w-75">
+        <mat-form-field class="w-100">
             <mat-label>{{ 'SHARED.password' | translate }}</mat-label>
             <input aria-label=""
                    formControlName="password"
@@ -20,3 +20,11 @@
         </mat-form-field>
     </div>
 </form>
+<div class="d-flex justify-content-end"
+     mat-dialog-actions>
+    <button (click)="submit()"
+            color="accent"
+            mat-flat-button>
+        {{ 'SHARED.save' | translate }}
+    </button>
+</div>

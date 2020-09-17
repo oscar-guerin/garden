@@ -22,6 +22,10 @@ export class DialogService {
 		return this.matDialog.open(component, { data, minWidth: '40vw' }).componentInstance;
 	}
 
+	public openSmall(component: ComponentType<unknown>, data: any = {}): any {
+		return this.matDialog.open(component, { data, width: '450px' }).componentInstance;
+	}
+
 	public confirm(textCode: ConfirmTextCode): Observable<boolean> {
 		return this.matDialog.open(ConfirmComponent, { data: textCode }).componentInstance.confirm$;
 	}

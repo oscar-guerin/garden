@@ -12,6 +12,6 @@ export class MenuComponent {
 	}
 
 	public openMailAuthDialog(): void {
-		DialogService.getInstance().open(MailAuthComponent);
+		DialogService.getInstance().openSmall(MailAuthComponent);
 	}
 }
