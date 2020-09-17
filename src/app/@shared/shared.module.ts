@@ -19,6 +19,7 @@ import { ProgressSpinnerDirective } from './directives/progress-spinner.directiv
 import { ProgressSpinnerContainerComponent } from './progress-spinner-container/progress-spinner-container.component';
 import { DetailStrategyComponent } from './detail-strategy/detail-strategy.component';
 import { MailAuthComponent } from './mail-auth/mail-auth.component';
+import { CreateCropComponent } from './create-crop/create-crop.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -29,7 +30,8 @@ const EXPORTABLE_COMPONENTS: any = [
 	ConfirmComponent,
 	ImageUploaderComponent,
 	DetailStrategyComponent,
-	MailAuthComponent
+	MailAuthComponent,
+	CreateCropComponent
 ];
 
 const FORM_CONTROLS: any = [

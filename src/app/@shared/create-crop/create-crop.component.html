@@ -1,0 +1,39 @@
+<div [progressSpinner]="isLoading">
+    <h1 mat-dialog-title>{{ 'CROP.new' | translate }}</h1>
+    <form [formGroup]="form"
+          class="container-fluid">
+        <div class="row w-75">
+            <mat-form-field class="w-100">
+                <mat-label>{{ 'CROP.name' | translate }}</mat-label>
+                <input aria-label=""
+                       formControlName="name"
+                       matInput>
+                <mat-error *ngIf="nameControl.hasError('required')">
+                    {{ 'FORM.requiredError' | translate }}
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row w-75">
+            <mat-form-field class="w-100">
+                <mat-label>{{ 'CROP.family' | translate }}</mat-label>
+                <mat-select formControlName="family">
+                    <mat-option *ngFor="let family of families | enumToArray"
+                                [value]="family">
+                        {{ family | translate }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="familyControl.hasError('required')">
+                    {{ 'FORM.requiredError' | translate }}
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+    <div class="d-flex justify-content-end"
+         mat-dialog-actions>
+        <button (click)="submit()"
+                color="accent"
+                mat-flat-button>
+            {{ 'SHARED.save' | translate }}
+        </button>
+    </div>
+</div>
