@@ -1,6 +1,7 @@
 <h1 mat-dialog-title>{{ 'SHARED.login' | translate }}</h1>
 <form [formGroup]="form"
       class="container-fluid">
+    <div class="row mb-3">{{ 'SHARED.loginExplanation' | translate }}</div>
     <div class="row">
         <mat-form-field>
             <mat-label>{{ 'SHARED.email' | translate }}</mat-label>

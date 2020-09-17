@@ -10,7 +10,8 @@
     "chooseFile": "Choose a file",
     "login": "Login",
     "email": "Email",
-    "password": "Password"
+    "password": "Password",
+    "loginExplanation": "By logging in, you gain writing privileges for the entire website. Therefore, an invitation is required to create an account."
   },
   "CROP": {
     "crop": "Crop",

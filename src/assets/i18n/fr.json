@@ -10,7 +10,8 @@
     "chooseFile": "Choisir un fichier",
     "login": "Connexion",
     "email": "Email",
-    "password": "Mot de passe"
+    "password": "Mot de passe",
+    "loginExplanation": "La connexion permet d'obtenir les droits en écriture sur l'entièreté du site. Par conséquent, la création d'un nouveau compte se fait sous invitation uniquement."
   },
   "CROP": {
     "crop": "Culture",
