@@ -8,6 +8,12 @@
             <input aria-label=""
                    formControlName="email"
                    matInput>
+            <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+                {{ 'FORM.emailError' | translate }}
+            </mat-error>
+            <mat-error *ngIf="emailControl.hasError('required')">
+                {{ 'FORM.requiredError' | translate }}
+            </mat-error>
         </mat-form-field>
     </div>
     <div class="row w-75">
@@ -17,6 +23,9 @@
                    formControlName="password"
                    matInput
                    type="password">
+            <mat-error *ngIf="passwordControl.hasError('required')">
+                {{ 'FORM.requiredError' | translate }}
+            </mat-error>
         </mat-form-field>
     </div>
 </form>

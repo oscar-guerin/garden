@@ -13,6 +13,10 @@
     "password": "Password",
     "loginExplanation": "By logging in, you gain writing privileges for the entire website. Therefore, an invitation is required to create an account."
   },
+  "FORM": {
+    "requiredError": "This field is required",
+    "emailError": "Please enter a valid email"
+  },
   "CROP": {
     "crop": "Crop",
     "crops": "Crops",
