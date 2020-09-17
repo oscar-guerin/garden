@@ -1,12 +1,26 @@
-<mat-toolbar color="primary">
-	<span class="font-weight-bold mr-3"
-          routerLink="/">
+<mat-toolbar class="d-flex justify-content-between"
+             color="primary">
+    <div>
+        <span class="font-weight-bold mr-3"
+              routerLink="/">
         Garden
     </span>
-    <button mat-flat-button
-            class="mx-3"
-            routerLink="/crops">
-        {{ 'CROP.crops' | translate }}
-    </button>
-    <app-language-switcher></app-language-switcher>
+        <button class="mx-3"
+                mat-flat-button
+                routerLink="/crops">
+            {{ 'CROP.crops' | translate }}
+        </button>
+    </div>
+    <div>
+        <button [matMenuTriggerFor]="menu"
+                mat-icon-button>
+            <mat-icon>
+                more_vert
+            </mat-icon>
+        </button>
+    </div>
 </mat-toolbar>
+
+<mat-menu #menu>
+    <app-language-switcher class="px-3"></app-language-switcher>
+</mat-menu>
