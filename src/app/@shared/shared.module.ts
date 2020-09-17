@@ -18,6 +18,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { ProgressSpinnerDirective } from './directives/progress-spinner.directive';
 import { ProgressSpinnerContainerComponent } from './progress-spinner-container/progress-spinner-container.component';
 import { DetailStrategyComponent } from './detail-strategy/detail-strategy.component';
+import { MailAuthComponent } from './mail-auth/mail-auth.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -27,7 +28,8 @@ const EXPORTABLE_COMPONENTS: any = [
 	EditStrategyComponent,
 	ConfirmComponent,
 	ImageUploaderComponent,
-	DetailStrategyComponent
+	DetailStrategyComponent,
+	MailAuthComponent
 ];
 
 const FORM_CONTROLS: any = [

@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{ 'SHARED.login' | translate }}</h1>
+<form [formGroup]="form"
+      class="container-fluid">
+    <div class="row">
+        <mat-form-field>
+            <mat-label>{{ 'SHARED.email' | translate }}</mat-label>
+            <input aria-label=""
+                   formControlName="email"
+                   matInput>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field>
+            <mat-label>{{ 'SHARED.password' | translate }}</mat-label>
+            <input aria-label=""
+                   formControlName="password"
+                   matInput
+                   type="password">
+        </mat-form-field>
+    </div>
+</form>
