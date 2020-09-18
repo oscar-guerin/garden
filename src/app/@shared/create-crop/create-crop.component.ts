@@ -44,7 +44,10 @@ export class CreateCropComponent {
 					this.dialog.disableClose = true;
 				}),
 				switchMap((crop: Crop) => this.cropService.createOrUpdate(crop)),
-				onAny(() => this.isLoading = false),
+				onAny(() => {
+					this.isLoading = false;
+					this.dialog.disableClose = false;
+				}),
 				first()
 			).subscribe(() => {
 				this.dialog.close()

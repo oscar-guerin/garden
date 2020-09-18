@@ -1,8 +1,8 @@
 <mat-table [dataSource]="crops$ | async">
-	<ng-container matColumnDef="name">
-		<mat-header-cell *matHeaderCellDef>
-			{{ 'CROP.name' | translate }}
-		</mat-header-cell>
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>
+            {{ 'CROP.name' | translate }}
+        </mat-header-cell>
         <mat-cell *matCellDef="let crop">
             {{ crop.name }}
         </mat-cell>
@@ -16,6 +16,6 @@
 <button color="accent"
         class="float-right mt-3 mr-3"
         mat-fab
-        routerLink="/crops/create">
+        (click)="openCreateCropDialog()">
     <mat-icon>add</mat-icon>
 </button>

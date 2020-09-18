@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { CropService } from './services/crop.service';
 import { MaterialModule } from '../@material/material.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,6 +14,8 @@ import { SnackbarService } from './services/snackbar.service';
 import { DynamicOverlay } from './dynamic-overlay.service';
 import { DynamicOverlayContainer } from './dynamic-overlay-container.service';
 import { AuthService } from './services/auth.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 const SERVICES: any = [
 	CropService,
@@ -29,6 +31,14 @@ const SERVICES: any = [
 const PIPES: any = [
 	EnumToArrayPipe
 ]
+
+const INTERCEPTORS: Provider[] = [
+	{
+		provide: HTTP_INTERCEPTORS,
+		useClass: ErrorInterceptor,
+		multi: true
+	},
+];
 
 @NgModule({
 	imports: [
@@ -49,6 +59,7 @@ const PIPES: any = [
 	],
 	providers: [
 		...SERVICES,
+		...INTERCEPTORS,
 		DynamicOverlayContainer,
 		DynamicOverlay,
 	],
