@@ -1,16 +1,16 @@
 <h1 mat-dialog-title>{{ 'ACTION.action' | translate }}</h1>
 <form [formGroup]="form"
       class="container-fluid">
-    <div class="row">
-        <mat-form-field>
+    <div class="row w-75">
+        <mat-form-field class="w-100">
             <mat-label>{{ 'ACTION.name' | translate }}</mat-label>
             <input formControlName="name"
                    aria-label=""
                    matInput>
         </mat-form-field>
     </div>
-    <div class="row">
-        <mat-form-field>
+    <div class="row w-75">
+        <mat-form-field class="w-100">
             <mat-label>{{ 'ACTION.actionType' | translate }}</mat-label>
             <mat-select formControlName="actionType">
                 <mat-option *ngFor="let actionType of actionTypes | enumToArray"
