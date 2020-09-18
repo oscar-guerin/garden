@@ -23,6 +23,7 @@
                     {{ 'SHARED.backToList' | translate }}
                 </button>
                 <button color="accent"
+                        *isAuthenticated
                         mat-flat-button
                         routerLink="/crops/edit/{{crop.id}}">
                     {{ 'SHARED.edit' | translate }}

@@ -13,7 +13,8 @@
              routerLink="/crops/detail/{{crop.id}}">
     </mat-row>
 </mat-table>
-<button color="accent"
+<button *isAuthenticated
+        color="accent"
         class="float-right mt-3 mr-3"
         mat-fab
         (click)="openCreateCropDialog()">

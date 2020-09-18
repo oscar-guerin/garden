@@ -20,6 +20,7 @@ import { ProgressSpinnerContainerComponent } from './progress-spinner-container/
 import { DetailStrategyComponent } from './detail-strategy/detail-strategy.component';
 import { MailAuthComponent } from './mail-auth/mail-auth.component';
 import { CreateCropComponent } from './create-crop/create-crop.component';
+import { IsAuthenticatedDirective } from './directives/is-authenticated.directive';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -41,7 +42,8 @@ const FORM_CONTROLS: any = [
 ];
 
 const DIRECTIVES: any = [
-	ProgressSpinnerDirective
+	ProgressSpinnerDirective,
+	IsAuthenticatedDirective
 ];
 
 @NgModule({
