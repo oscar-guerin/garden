@@ -21,6 +21,8 @@ import { DetailStrategyComponent } from './detail-strategy/detail-strategy.compo
 import { MailAuthComponent } from './mail-auth/mail-auth.component';
 import { CreateCropComponent } from './create-crop/create-crop.component';
 import { IsAuthenticatedDirective } from './directives/is-authenticated.directive';
+import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarMonthComponent } from './calendar/calendar-month/calendar-month.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -32,7 +34,8 @@ const EXPORTABLE_COMPONENTS: any = [
 	ImageUploaderComponent,
 	DetailStrategyComponent,
 	MailAuthComponent,
-	CreateCropComponent
+	CreateCropComponent,
+	CalendarComponent
 ];
 
 const FORM_CONTROLS: any = [
@@ -64,7 +67,8 @@ const DIRECTIVES: any = [
 		...DIRECTIVES,
 		LanguageSwitcherComponent,
 		PeriodTileComponent,
-		ProgressSpinnerContainerComponent
+		ProgressSpinnerContainerComponent,
+		CalendarMonthComponent
 	],
 	providers: [],
 })
