@@ -1,4 +1,5 @@
 <div class="container">
     <h3 class="row">{{ strategy.name }}</h3>
-    <app-calendar *ngIf="periods$ | async as periods"></app-calendar>
+    <app-calendar *ngIf="periods$ | async as periods"
+                  [plannedActions]="strategy.plannedActions"></app-calendar>
 </div>
