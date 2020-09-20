@@ -23,6 +23,7 @@ import { CreateCropComponent } from './create-crop/create-crop.component';
 import { IsAuthenticatedDirective } from './directives/is-authenticated.directive';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarMonthComponent } from './calendar/calendar-month/calendar-month.component';
+import { CalendarActionComponent } from './calendar/calendar-month/calendar-action.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -68,7 +69,8 @@ const DIRECTIVES: any = [
 		LanguageSwitcherComponent,
 		PeriodTileComponent,
 		ProgressSpinnerContainerComponent,
-		CalendarMonthComponent
+		CalendarMonthComponent,
+		CalendarActionComponent
 	],
 	providers: [],
 })

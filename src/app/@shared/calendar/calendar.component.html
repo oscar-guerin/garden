@@ -1,4 +1,7 @@
-<app-calendar-month *ngFor="let month of (months | enumToArray); let i = index"
-                    [firstHalfAction]="plannedActions[i * 2]"
-                    [secondHalfAction]="plannedActions[i * 2 + 1]"
-                    [month]="month"></app-calendar-month>
+<div class="d-flex flex-wrap">
+    <app-calendar-month *ngFor="let month of (months | enumToArray); let i = index"
+                        [firstHalfAction]="plannedActions[i * 2]"
+                        [month]="month"
+                        [secondHalfAction]="plannedActions[i * 2 + 1]"
+                        class="mx-2"></app-calendar-month>
+</div>

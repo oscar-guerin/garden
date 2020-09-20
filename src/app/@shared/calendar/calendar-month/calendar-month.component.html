@@ -1,7 +1,7 @@
 {{ month | translate }}
-<ng-container *ngIf="firstHalfAction">
-    {{ firstHalfAction.name }}
-</ng-container>
-<ng-container *ngIf="secondHalfAction">
-    {{ secondHalfAction.name }}
-</ng-container>
+<app-calendar-action *ngIf="firstHalfAction"
+                     [action]="firstHalfAction">
+</app-calendar-action>
+<app-calendar-action *ngIf="secondHalfAction"
+                     [action]="secondHalfAction">
+</app-calendar-action>
