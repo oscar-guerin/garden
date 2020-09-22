@@ -50,6 +50,10 @@ body {
   cursor: pointer;
 }
 
+::selection, ::-moz-selection {
+  background: #c8e6c9;
+}
+
 .mat-toolbar {
   font: inherit !important;
 }

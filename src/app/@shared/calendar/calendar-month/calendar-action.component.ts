@@ -1,10 +1,14 @@
 import { Component, HostBinding, Input } from '@angular/core';
 import { Action } from '../../../@core/models/action';
+import { DialogService } from '../../../@core/services/dialog.service';
+import { DetailActionComponent } from '../../detail-action/detail-action.component';
 
 @Component({
 	selector: 'app-calendar-action',
 	template: `
-        <div class="h-100 w-100 d-flex align-items-center justify-content-center">
+        <div class="h-100 w-100 d-flex align-items-center justify-content-center"
+             [class.pointer]="action.id"
+             (click)="openDetailActionDialog(action)">
             <span>{{ action.name }}</span>
         </div>
 	`,
@@ -34,5 +38,11 @@ export class CalendarActionComponent {
 	@HostBinding('style.background-color')
 	public get actionColor(): string {
 		return this.action.getColorCode();
+	}
+
+	public openDetailActionDialog(action: Action): void {
+		if (action.id) {
+			DialogService.getInstance().open(DetailActionComponent, { action });
+		}
 	}
 }

@@ -1,0 +1,5 @@
+<h1 mat-dialog-title>{{ data.action.name }}</h1>
+<div *ngFor="let step of data.action.steps; let i = index"
+     class="mb-2">
+    <strong>{{ i + 1 }}.</strong> {{ step }}
+</div>

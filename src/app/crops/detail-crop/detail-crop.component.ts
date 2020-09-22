@@ -8,9 +8,6 @@ import { map, switchMap } from 'rxjs/operators';
 @Component({
 	selector: 'app-detail-crop',
 	templateUrl: './detail-crop.component.html',
-	styles: [`
-
-	`]
 })
 export class DetailCropComponent {
 

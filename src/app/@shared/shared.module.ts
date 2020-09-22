@@ -24,6 +24,7 @@ import { IsAuthenticatedDirective } from './directives/is-authenticated.directiv
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarMonthComponent } from './calendar/calendar-month/calendar-month.component';
 import { CalendarActionComponent } from './calendar/calendar-month/calendar-action.component';
+import { DetailActionComponent } from './detail-action/detail-action.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -36,7 +37,8 @@ const EXPORTABLE_COMPONENTS: any = [
 	DetailStrategyComponent,
 	MailAuthComponent,
 	CreateCropComponent,
-	CalendarComponent
+	CalendarComponent,
+	DetailActionComponent
 ];
 
 const FORM_CONTROLS: any = [
