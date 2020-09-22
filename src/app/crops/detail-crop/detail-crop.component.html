@@ -1,7 +1,7 @@
 <div *ngIf="crop$ | async as crop"
      class="container-fluid h-75 mt-3">
     <div class="row h-100">
-        <div class="col-3 h-100 border-right d-flex flex-column align-items-center">
+        <div class="col-12 h-100 d-flex flex-column align-items-center">
             <div class="row">
                 <img [src]="crop.imageUrl"
                      alt="Crop avatar"
@@ -15,7 +15,7 @@
                 <span>{{ crop.family | translate }}</span>
             </div>
         </div>
-        <div class="col-9 px-5">
+        <div class="col-12 px-5">
             <div class="row d-flex justify-content-end">
                 <button class="mr-2"
                         mat-stroked-button
