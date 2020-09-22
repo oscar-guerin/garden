@@ -12,7 +12,8 @@
     "email": "Email",
     "password": "Password",
     "loginExplanation": "By logging in, you gain writing privileges for the entire website. Therefore, an invitation is required to create an account.",
-    "logout": "Sign out"
+    "logout": "Sign out",
+    "home": "Home"
   },
   "FORM": {
     "requiredError": "This field is required",
