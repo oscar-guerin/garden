@@ -1,7 +1,7 @@
 <div *ngIf="crop$ | async as crop"
      class="container-fluid h-75 mt-3">
     <div class="row h-lg-100">
-        <div class="col-12 h-lg-100 d-flex flex-column align-items-center">
+        <div class="col-12 col-lg-3 h-lg-100 border-lg-right d-flex flex-column align-items-center">
             <div class="row">
                 <img [src]="crop.imageUrl"
                      alt="Crop avatar"
@@ -15,18 +15,32 @@
                 <span>{{ crop.family | translate }}</span>
             </div>
         </div>
-        <div class="col-12 px-5">
-            <div class="row d-flex justify-content-end">
+        <div class="col-12 col-lg-9 plgx-5">
+            <div class="row d-flex justify-content-center d-lg-none">
+                <button class="mr-2"
+                        mat-icon-button
+                        routerLink="/crops/list">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <button *isAuthenticated
+                        mat-icon-button
+                        routerLink="/crops/edit/{{crop.id}}">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <div class="row d-none d-lg-flex justify-content-end">
                 <button class="mr-2"
                         mat-stroked-button
                         routerLink="/crops/list">
-                    {{ 'SHARED.backToList' | translate }}
+                    <mat-icon class="mr-2">arrow_back</mat-icon>
+                    <span>{{ 'SHARED.backToList' | translate }}</span>
                 </button>
-                <button color="accent"
-                        *isAuthenticated
+                <button *isAuthenticated
+                        color="accent"
                         mat-flat-button
                         routerLink="/crops/edit/{{crop.id}}">
-                    {{ 'SHARED.edit' | translate }}
+                    <mat-icon class="mr-2">edit</mat-icon>
+                    <span>{{ 'SHARED.edit' | translate }}</span>
                 </button>
             </div>
             <h2 class="row">{{ 'STRATEGY.strategies' | translate }}</h2>
