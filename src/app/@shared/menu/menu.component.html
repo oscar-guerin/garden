@@ -1,6 +1,14 @@
 <mat-toolbar class="d-flex justify-content-between"
              color="primary">
-    <div class="d-flex align-items-center">
+    <div class="d-flex d-md-none">
+        <button [matMenuTriggerFor]="navigationMenu"
+                mat-icon-button>
+            <mat-icon>
+                menu
+            </mat-icon>
+        </button>
+    </div>
+    <div class="d-none d-md-flex align-items-center">
         <div class="pointer d-flex align-items-center"
              routerLink="/">
             <img alt="Icon"
@@ -21,7 +29,7 @@
              class="mr-3">
             {{ user.username }}
         </div>
-        <button [matMenuTriggerFor]="menu"
+        <button [matMenuTriggerFor]="userMenu"
                 mat-icon-button>
             <mat-icon>
                 more_vert
@@ -30,7 +38,7 @@
     </div>
 </mat-toolbar>
 
-<mat-menu #menu>
+<mat-menu #userMenu>
     <app-language-switcher class="px-3"></app-language-switcher>
     <button (click)="openMailAuthDialog()"
             *ngIf="!(user$ | async)"
@@ -43,5 +51,18 @@
             mat-menu-item>
         <mat-icon>logout</mat-icon>
         <span>{{ 'SHARED.logout' | translate }}</span>
+    </button>
+</mat-menu>
+
+<mat-menu #navigationMenu>
+    <button mat-menu-item
+            routerLink="/">
+        <mat-icon>home</mat-icon>
+        <span>{{ 'SHARED.home' | translate }}</span>
+    </button>
+    <button mat-menu-item
+            routerLink="/crops">
+        <mat-icon>error</mat-icon>
+        <span>{{ 'SHARED.crops' | translate }}</span>
     </button>
 </mat-menu>
