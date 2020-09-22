@@ -11,7 +11,6 @@ import { Action } from '../../../@core/models/action';
 	styles: [`
         :host {
             display: block;
-            width: 120px;
             height: 50px;
             box-shadow: inset 0 0 50px 6px white;
             font-size: 12px;

@@ -39,8 +39,8 @@
     "delete": "Supprimer l'action"
   },
   "STRATEGY": {
-    "strategy": "Strategie",
-    "strategies": "Strategies",
+    "strategy": "Stratégie",
+    "strategies": "Stratégies",
     "name": "Name",
     "calendar": "Calendrier",
     "edit": "Modifier la stratégie",
