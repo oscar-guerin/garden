@@ -4,6 +4,9 @@
 
 @each $prop, $abbrev in (width: w, height: h) {
   @each $size, $length in $sizes {
+    @include create-breakpoint-class($abbrev, $size) {
+      #{$prop}: $length !important;
+    }
     .#{$abbrev}-#{$size} {
       #{$prop}: $length !important;
     }

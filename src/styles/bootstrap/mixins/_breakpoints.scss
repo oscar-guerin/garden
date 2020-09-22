@@ -121,3 +121,15 @@
     }
   }
 }
+
+@mixin create-breakpoint-class($class-name-prefix, $class-name-suffix) {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .#{$class-name-prefix}#{$infix}-#{$class-name-suffix} {
+      @include media-breakpoint-up($breakpoint) {
+        @content;
+      }
+    }
+  }
+}
