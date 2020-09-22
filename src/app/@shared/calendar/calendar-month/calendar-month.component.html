@@ -1,7 +1,7 @@
-{{ month | translate }}
-<app-calendar-action *ngIf="firstHalfAction"
-                     [action]="firstHalfAction">
-</app-calendar-action>
-<app-calendar-action *ngIf="secondHalfAction"
-                     [action]="secondHalfAction">
-</app-calendar-action>
+<strong>{{ month | translate }}</strong>
+<div>
+    <app-calendar-action [action]="firstHalfAction">
+    </app-calendar-action>
+    <app-calendar-action [action]="secondHalfAction">
+    </app-calendar-action>
+</div>

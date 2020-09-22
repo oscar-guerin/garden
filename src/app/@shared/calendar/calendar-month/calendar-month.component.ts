@@ -14,7 +14,4 @@ export class CalendarMonthComponent {
 	public firstHalfAction: Action;
 	@Input()
 	public secondHalfAction: Action;
-
-	public constructor() {
-	}
 }
