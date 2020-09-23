@@ -57,6 +57,11 @@
     "fileNotImage": "Le type du fichier choisi est invalide, veuillez choisir une image",
     "userNotFound": "Identifiants invalides, utilisateur non trouvé"
   },
+  "ABOUT": {
+    "welcome": "Bienvenue sur Gardenpedia, site open source ayant pour but de recenser des informations d'utilité publique en lien avec le démarrage et l'entretien d'un potager amateur. Des cultures de légumes à la plantation d'herbes aromatiques, le but est de faciliter au maximum la recherche d'informations essentielles en les centralisant.",
+    "disclaimer": "En aucun cas ce site n'aspire a faire concurrence aux nombreux sites de jardinage existants.",
+    "informations": "Contrairement aux sites de jardinage existants, une approche plus utilitaire et personnelle est voulue ici. Le but est de pouvoir en quelques secondes retrouver une date de semis ou de repiquage d'un légume sans être noyé sous une masse d'information décourageante. L'accent est mis sur le peu d'informations essentielles qui sont utiles le plus souvent."
+  },
   "SOWING": "Semis",
   "PLANTING": "Plantation",
   "CARE": "Entretien",
