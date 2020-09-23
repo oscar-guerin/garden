@@ -17,7 +17,12 @@ import { DetailActionComponent } from '../../detail-action/detail-action.compone
             display: block;
             height: 50px;
             box-shadow: inset 0 0 50px 6px white;
+            transition: box-shadow 0.2s ease-out;
             font-size: 12px;
+        }
+
+        :host:hover {
+            box-shadow: inset 0 0 20px 6px white;
         }
 
         span {
