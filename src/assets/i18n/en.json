@@ -60,7 +60,11 @@
   "ABOUT": {
     "welcome": "Welcome on Gardenpedia, an open source website aiming to gather utilitary informations for starting and preserving a kitchen garden. From the culture of vegetables to the plantation of aromatic herbs, the goal is to ease the search of basic informations by centralizing them.",
     "disclaimer": "By no means this website aspires to compete with the numerous existing gardening websites.",
-    "informations": "In opposition to the existing gardening websites, a more personnal approach is wanted here. The goal is to allow anyone to find in a few seconds a sowing or transplanting date without being drowned under a ton of discouraging informations. The emphasis is made on the few essential informations that are needed the most often."
+    "informations": "In opposition to the existing gardening websites, a more personnal approach is wanted here. The goal is to allow anyone to find in a few seconds a sowing or transplanting date without being drowned under a ton of discouraging informations. The emphasis is made on the few essential informations that are needed the most often.",
+    "madeBy": "Website made by Oscar Guérin",
+    "github": "Follow on Github",
+    "linkedin": "Contact on Linkedin",
+    "icons": "Icons found on"
   },
   "SOWING": "Sowing",
   "PLANTING": "Planting",

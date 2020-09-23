@@ -1,1 +1,32 @@
-It werks
+<footer class="container-fluid">
+    <h3 class="row px-lg-5">{{ 'ABOUT.madeBy' | translate }}</h3>
+    <div class="row d-flex justify-content-evenly flex-wrap">
+        <div class="p-3">
+            <a href="https://github.com/oscar-guerin"
+               target="_blank">
+                <img alt="Github"
+                     class="mr-2"
+                     height="48"
+                     src="assets/github.png"
+                     width="48">
+                <span>{{ 'ABOUT.github' | translate }}</span>
+            </a>
+        </div>
+        <div class="p-3">
+            <a href="https://www.linkedin.com/in/oscar-gu%C3%A9rin-97816413b/"
+               target="_blank">
+                <img alt="Linkedin"
+                     class="mr-2"
+                     height="48"
+                     src="assets/linkedin.png"
+                     width="48">
+                <span>{{ 'ABOUT.linkedin' | translate }}</span>
+            </a>
+        </div>
+    </div>
+    <div class="row px-lg-5">
+        {{ 'ABOUT.icons' | translate }}&nbsp;
+        <a href="https://www.flaticon.com/"
+           title="Flaticon">www.flaticon.com</a>
+    </div>
+</footer>
