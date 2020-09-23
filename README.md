@@ -7,7 +7,6 @@
 
 # ![alt text](https://raw.githubusercontent.com/oscar-guerin/garden/develop/src/assets/gardenpedia_64.png "Gardenpedia") Gardenpedia
 
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
@@ -19,7 +18,7 @@
 
 ## About The Project
 
-<!-- Link -->
+Live version of the project [here](https://garden-f5683.firebaseapp.com/).
 
 ### Built With
 * [Angular](https://angular.io/)
