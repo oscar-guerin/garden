@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Strategy } from './strategy';
 import { StrategyQuery } from '../queries/strategy.query';
 import { Family } from '../enumerations/family';
+import { Variety } from './variety';
 
 @FirebaseResource({
 	firebaseConfiguration: '/crops',
@@ -25,6 +26,9 @@ export class Crop {
 
 	@Column()
 	public imageUrl: string;
+
+	@Column({ type: () => Variety })
+	public varieties: Variety[] = [];
 
 	@SubCollection({
 		resourceType: () => Action,
