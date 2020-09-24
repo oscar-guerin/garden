@@ -25,6 +25,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarMonthComponent } from './calendar/calendar-month/calendar-month.component';
 import { CalendarActionComponent } from './calendar/calendar-month/calendar-action.component';
 import { DetailActionComponent } from './detail-action/detail-action.component';
+import { VarietiesControlComponent } from './form-controls/varieties-control/varieties-control.component';
+import { EditVarietiesComponent } from './edit-varieties/edit-varieties.component';
 
 const EXPORTABLE_COMPONENTS: any = [
 	MenuComponent,
@@ -44,7 +46,8 @@ const EXPORTABLE_COMPONENTS: any = [
 const FORM_CONTROLS: any = [
 	StrategyPlannerControlComponent,
 	FileSelectorControlComponent,
-	ImageControlComponent
+	ImageControlComponent,
+	VarietiesControlComponent
 ];
 
 const DIRECTIVES: any = [
@@ -72,7 +75,8 @@ const DIRECTIVES: any = [
 		PeriodTileComponent,
 		ProgressSpinnerContainerComponent,
 		CalendarMonthComponent,
-		CalendarActionComponent
+		CalendarActionComponent,
+		EditVarietiesComponent
 	],
 	providers: [],
 })
