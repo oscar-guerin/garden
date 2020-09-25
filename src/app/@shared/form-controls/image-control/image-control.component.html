@@ -1,5 +1,6 @@
 <img alt="{{ 'CROP.crop' | translate }}"
-     height="200"
+     [height]="size"
+     [width]="size"
      [src]="imageSrc"
      (click)="openImagePickerDialog()"
-     width="200">
+     class="border-radius-50">

@@ -1,0 +1,38 @@
+<ng-container [formGroup]="form">
+    <ng-container formArrayName="varieties">
+        <div *ngFor="let step of varietiesArrayControl.controls; let i = index"
+             class="d-flex justify-content-between">
+            <div>
+                <div class="font-weight-bold">{{ i + 1 }}</div>
+                <app-image-control [size]="100"></app-image-control>
+            </div>
+            <div [formGroupName]="i"
+                 class="d-flex">
+                <div>
+                    <mat-form-field>
+                        <mat-label>{{ 'VARIETY.name' | translate }}</mat-label>
+                        <input aria-label=""
+                               class="w-100"
+                               formControlName="name"
+                               matInput/>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>{{ 'VARIETY.binomialName' | translate }}</mat-label>
+                        <input aria-label=""
+                               class="w-100"
+                               formControlName="binomialName"
+                               matInput/>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-2">
+                <button (click)="removeStep(i)"
+                        aria-label="{{ 'VARIETY.deleteVariety' | translate }}"
+                        color="warn"
+                        mat-mini-fab>
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

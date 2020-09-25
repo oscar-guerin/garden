@@ -27,6 +27,8 @@ export class ImageControlComponent extends AbstractPrimitiveControl<string> impl
 
 	@Input()
 	public uploadPath: string;
+	@Input()
+	public size: number = 200;
 
 	public imageSrc: string = '../../../../assets/placeholder.png';
 	private subscription: Subscription;

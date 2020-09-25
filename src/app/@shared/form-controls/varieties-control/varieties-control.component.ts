@@ -1,7 +1,6 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { AbstractPrimitiveControl } from '../abstract-primitive-control';
-import { Crop } from '../../../@core/models/crop';
 import { Variety } from '../../../@core/models/variety';
 
 @Component({
@@ -18,9 +17,9 @@ import { Variety } from '../../../@core/models/variety';
 export class VarietiesControlComponent extends AbstractPrimitiveControl<Variety[]> {
 
 	@Input()
-	public crop: Crop;
+	public varieties: Variety[];
 
 	public constructor() {
-		super('strategy', '');
+		super('varieties', '');
 	}
 }
