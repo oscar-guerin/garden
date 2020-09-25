@@ -48,6 +48,12 @@
     "edit": "Modifier la stratégie",
     "delete": "Supprimer la stratégie"
   },
+  "VARIETY": {
+    "variety": "Variété",
+    "varieties": "Variétés",
+    "name": "Nom",
+    "binomialName": "Nom binomial"
+  },
   "CONFIRM": {
     "confirm": "Confirmation",
     "delete": "Êtes-vous sur de vouloir supprimer cet élément ?"

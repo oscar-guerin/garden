@@ -48,6 +48,12 @@
     "edit": "Edit strategy",
     "delete": "Delete strategy"
   },
+  "VARIETY": {
+    "variety": "Variety",
+    "varieties": "Varieties",
+    "name": "Name",
+    "binomialName": "Binomial name"
+  },
   "CONFIRM": {
     "confirm": "Confirmation",
     "delete": "Are you sure you want to delete this element ?"
